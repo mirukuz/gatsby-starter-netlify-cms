@@ -69,12 +69,22 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
+      resolve: "gatsby-omni-font-loader",
       options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ["/all.sass"], // applies purging only on the bulma css file
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`],
+        web: [
+          {
+            name: "Oswald",
+            file: "https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap",
+          },
+          {
+            name: "Source Sans Pro",
+            file: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap"
+          }
+        ],
       },
-    }, // must be after other CSS plugins
+    },
     "gatsby-plugin-netlify", // make sure to keep it last in the array
   ],
 };

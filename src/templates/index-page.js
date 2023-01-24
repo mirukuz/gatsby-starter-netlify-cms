@@ -7,10 +7,12 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
+import Banner from "../components/Banner";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
+  agent,
   title,
   heading,
   subheading,
@@ -19,63 +21,54 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   const heroImage = getImage(image) || image;
-
+  const agentImage = getImage(agent) || agent;
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
-      <section className="section section--gradient">
+      <Banner
+        img={heroImage}
+        title={title}
+        agent={agentImage}
+        subheading={subheading}
+        mainpitch={mainpitch}
+      />
+      <div style={{ backgroundColor: "#F5F5F5" }}>
         <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        {heading}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </div>
-                  <Features gridItems={intro.blurbs} />
-                  <div className="columns">
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See all products
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <div className="content">
+                <div className="column is-12">
+                  <h3 className="has-text-weight-semibold is-size-2">
+                    Latest stories
+                  </h3>
+                  <BlogRoll />
+                  <div className="column is-12 has-text-centered">
+                    <Link className="btn" to="/blog">
+                      Read more
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      <div>
+          <h3 className="has-text-weight-semibold is-size-2">
+            Reviews
+          </h3>
+      </div>
+      <div style={{ backgroundColor: "#F5F5F5" }}>
+          <h3 className="has-text-weight-semibold is-size-2">
+            Free Consultation
+          </h3>
+      </div>
     </div>
   );
 };
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  agent: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
@@ -93,6 +86,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
+        agent={frontmatter.agent}
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
@@ -122,6 +116,11 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
+        agent {
+          childImageSharp {
+            gatsbyImageData(width: 360, quality: 100, layout: CONSTRAINED)
           }
         }
         heading
