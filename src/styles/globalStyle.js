@@ -11,6 +11,13 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
   }
+  h1 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
+  }
   p {
     font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
   }

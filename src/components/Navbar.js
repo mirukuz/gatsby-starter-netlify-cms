@@ -8,7 +8,6 @@ const Navbar = (props) => {
 
   return (
     <nav
-      className="navbar is-transparent"
       role="navigation"
       aria-label="main-navigation"
       {...props}
