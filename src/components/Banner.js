@@ -47,8 +47,8 @@ const MainpitchDescription = styled.h3`
 export default ({ img, title, subheading, agent, mainpitch }) => {
   return (
       <MaxWidthContainer>
+        <Navbar style={{ gridArea: "nav", zIndex: 1 }} />
         <FullWidthImage img={img}  style={{ gridArea: "1/1/4/5" }}/>
-        <Navbar style={{ gridArea: "nav" }} />
         {(title || subheading) && (
             <HeadingsContainer>
             {/* Any content here will be centered in the component */}

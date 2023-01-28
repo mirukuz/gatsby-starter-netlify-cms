@@ -21,6 +21,9 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
   }
+  li {
+    font-size: 1.2rem;
+  }
 `;
  
 export default GlobalStyle;

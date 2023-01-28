@@ -1,7 +1,29 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
+import styled from "styled-components";
 import logo from "../img/logo.png";
+
+const Container = styled.nav`
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 88px auto;
+`;
+
+const Ul = styled.ul`
+  width: 100%;
+  grid-area: 1/2;
+  display: flex;
+`;
+
+const Li = styled.li`
+  display: flex;
+  padding: 36px 24px;
+`;
+
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+`;
 
 const Navbar = (props) => {
   const [isActive, setIsActive] = useState(false);
@@ -12,13 +34,13 @@ const Navbar = (props) => {
       aria-label="main-navigation"
       {...props}
     >
-      <div className="container">
+      <Container>
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
             <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
           </Link>
           {/* Hamburger menu */}
-          <button
+          {/* <button
             className={`navbar-burger burger ${isActive && "is-active"}`}
             aria-expanded={isActive}
             onClick={() => setIsActive(!isActive)}
@@ -26,35 +48,31 @@ const Navbar = (props) => {
             <span />
             <span />
             <span />
-          </button>
+          </button> */}
         </div>
-        <ul id="navMenu" className={` navbar-start has-text-centered navbar-menu ${isActive && "is-active"}`}>
-            {/* TODO: inline override of padding is a result of refactoring
-                to a ul for accessibilty purposes, would like to see a css
-                re-write that makes this unneccesary.
-             */}
-            <li className="navbar-item" style={{padding: "0px"}}>
-              <Link className="navbar-item" to="/about">
+        <Ul>
+            <Li>
+              <StyledLink to="/about">
                 About
-              </Link>
-            </li>
-            <li className="navbar-item" style={{padding: "0px"}}>
-            <Link className="navbar-item" to="/services">
+              </StyledLink>
+            </Li>
+            <Li>
+            <StyledLink to="/services">
               Services
-            </Link>
-            </li>
-            <li className="navbar-item" style={{padding: "0px"}}>
-            <Link className="navbar-item" to="/blog">
+            </StyledLink>
+            </Li>
+            <Li>
+            <StyledLink to="/blog">
               Blog
-            </Link>
-            </li>
-            <li className="navbar-item" style={{padding: "0px"}}>
-            <Link className="navbar-item" to="/contact">
+            </StyledLink>
+            </Li>
+            <Li>
+            <StyledLink to="/contact">
               Contact
-            </Link>
-            </li>
-        </ul>
-      </div>
+            </StyledLink>
+            </Li>
+        </Ul>
+      </Container>
     </nav>
   );
 };
