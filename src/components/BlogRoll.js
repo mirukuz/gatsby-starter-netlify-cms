@@ -1,65 +1,54 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from "styled-components";
 import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import BlogCard from './BlogCard';
 
+const MaxWidthContainer = styled.div`
+  display: grid;
+  background-color: #F5F5F5;
+  margin: 0 auto;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: minmax(24px,auto) minmax(auto, 1300px) minmax(24px,auto);
+  grid-template-areas:
+    ". heading ."
+    ". blog ."
+    ". readmore .";
+`;
 
-const BlogRollTemplate = (props) => {
-  
+const Heading = styled.h1`
+  grid-area: heading;
+  margin: 24px auto;
+`;
+
+const Roll = styled.div`
+  grid-area: blog;
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: 1fr 1fr 1fr;
+`;
+
+const ReadMore = styled(Link)`
+  grid-area: readmore;
+`;
+
+const BlogRollTemplate = (props) => {  
   const { edges: posts } = props.data.allMarkdownRemark;
-
   return (
-    <div className="columns is-multiline">
-      {posts &&
-        posts.map(({ node: post }) => (
-          <div className="is-parent column is-6" key={post.id}>
-            <article
-              className={`blog-list-item tile is-child box notification ${
-                post.frontmatter.featuredpost ? 'is-featured' : ''
-              }`}
-            >
-              <header>
-                {post?.frontmatter?.featuredimage && (
-                  <div className="featured-thumbnail">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        width:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.width,
-                        height:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.height,
-                      }}
-                    />
-                  </div>
-                ) }
-                <p className="post-meta">
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={post.fields.slug}
-                  >
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
-                  </span>
-                </p>
-              </header>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Keep Reading →
-                </Link>
-              </p>
-            </article>
-          </div>
-        ))}
-    </div>
+    <MaxWidthContainer>
+      <Heading>
+        Latest Stories
+      </Heading>
+      <Roll>
+        {posts &&
+          posts.map(({ node: post }) => (
+            <BlogCard post={post} />
+          ))}
+      </Roll>
+      <ReadMore to="/blog">
+        Read more
+      </ReadMore>
+    </MaxWidthContainer>
   )
 }
 

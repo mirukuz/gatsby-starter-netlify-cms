@@ -19,9 +19,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
   }
   p {
+    font-size: 1.2rem;
     font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
   }
   li {
+    font-size: 1.2rem;
+  }
+  button {
+    font-family: 'Oswald', Helvetica, Sans-Serif;
     font-size: 1.2rem;
   }
 `;

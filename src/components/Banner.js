@@ -1,6 +1,7 @@
 import React from "react";
 import FullWidthImage from "./FullWidthImage";
 import Navbar from "./Navbar";
+import Button from "./Button";
 import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
 
@@ -15,6 +16,11 @@ const MaxWidthContainer = styled.div`
     ". . agent ."
     ". headings agent ."
     ". mainpitch agent .";
+`;
+
+const BookButton = styled(Button)`
+    margin-top: 12px;
+    align-self: flex-start;
 `;
 
 const HeadingsContainer = styled.div`
@@ -54,6 +60,7 @@ export default ({ img, title, subheading, agent, mainpitch }) => {
             {/* Any content here will be centered in the component */}
             {title && <Title>{title}</Title>}
             {subheading && <Subheading>{subheading}</Subheading>}
+            <BookButton>Book a call today</BookButton>
             </HeadingsContainer>
         )}
         <GatsbyImage
