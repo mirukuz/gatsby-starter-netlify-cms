@@ -1,17 +1,18 @@
 ---
 templateKey: index-page
-title: Property investment made easy
+title: We made property investment easy
 image: /img/sydney-gradiant.png
 agent: /img/agent.png
 heading: Property investment made easy
-subheading: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+subheading: We offer one-stop service for you, hold your hands through the buying process, do all due diligence and hard work for you, we also provide all team members for your needs
 mainpitch:
-  title: Why Kaldi
+  title: Why choose us
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+    One-stop buying service, stress free
+    We can help you to buy all properties across Australia 
+    Using data systems to select right suburbs to buy
+    Using property analysis to pick the right property
+    Help you to achieve generating passive income and wealth
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,

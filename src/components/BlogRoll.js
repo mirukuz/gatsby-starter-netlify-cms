@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import styled from "styled-components";
 import { Link, graphql, StaticQuery } from 'gatsby'
 import BlogCard from './BlogCard';
+import { SecondaryButton } from './Button';
 
 const MaxWidthContainer = styled.div`
   display: grid;
+  position: relative;
   background-color: #F5F5F5;
   margin: 0 auto;
   grid-template-rows: auto 1fr;
@@ -23,13 +25,16 @@ const Heading = styled.h1`
 
 const Roll = styled.div`
   grid-area: blog;
+  z-index: 1;
   display: grid;
-  grid-gap: 24px;
+  grid-gap: 48px;
   grid-template-columns: 1fr 1fr 1fr;
 `;
 
 const ReadMore = styled(Link)`
   grid-area: readmore;
+  z-index: 1;
+  margin-top: 24px;
 `;
 
 const BlogRollTemplate = (props) => {  
@@ -46,8 +51,13 @@ const BlogRollTemplate = (props) => {
           ))}
       </Roll>
       <ReadMore to="/blog">
-        Read more
+        <SecondaryButton>
+          Read more
+        </SecondaryButton>
       </ReadMore>
+      <svg style={{ position: "absolute", bottom: 0 }} width="1511" height="168" viewBox="0 0 1511 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M1516 167.5L1 1V167.5H1516Z" fill="white" stroke="white"/>
+      </svg>
     </MaxWidthContainer>
   )
 }
@@ -85,9 +95,7 @@ export default function BlogRoll() {
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 120
-                        quality: 100
-                        layout: CONSTRAINED
+                        layout: FULL_WIDTH
                       )
 
                     }

@@ -1,114 +1,86 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
+import styled from "styled-components";
 import logo from "../img/logo.png";
 import facebook from "../img/social/facebook.svg";
 import instagram from "../img/social/instagram.svg";
 import twitter from "../img/social/twitter.svg";
 import vimeo from "../img/social/vimeo.svg";
 
+const MaxWidthContainer = styled.div`
+  display: grid;
+  position: relative;
+  background-color: #0E100A;
+  margin: 0 auto;
+  grid-template-rows: 24px auto 24px ;
+  grid-template-columns: minmax(24px,auto) minmax(auto, 300px) minmax(auto, 1000px) minmax(24px,auto);
+  grid-template-areas:
+    ". . . ."
+    ". logo link ."
+    ". . . .";
+`;
+
+const Logo = styled.div`
+  grid-area: logo;
+`;
+
+const Menu = styled.div`
+  grid-area: link;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const MenuCol = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  margin-bottom: 24px;
+`;
+
 const Footer = () => {
-  
-    return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: "14em", height: "10em" }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: "100vw" }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: "1em", height: "1em" }}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    );
-};
+  return (
+    <MaxWidthContainer>
+      <Logo>
+        <img
+          src={logo}
+          alt="bennyauproperty"
+          style={{ width: "4em", height: "4em" }}
+        />
+      </Logo>
+      <Menu>
+        <MenuCol>
+          <StyledLink to="/">
+            Terms and Condition
+          </StyledLink>
+          <StyledLink to="/">
+            Private Policy
+          </StyledLink>
+        </MenuCol>
+        <MenuCol>
+          <StyledLink to="/">
+            About Us
+          </StyledLink>
+          <StyledLink to="/">
+            Successful Deals
+          </StyledLink>
+        </MenuCol>
+        <MenuCol>
+          <StyledLink to="/">
+            Contact Us
+          </StyledLink>
+          <StyledLink to="/">
+            Services
+          </StyledLink>
+        </MenuCol>
+      </Menu>
+
+    </MaxWidthContainer>
+  )
+}
 
 export default Footer;

@@ -4,10 +4,10 @@ import { Link, graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
+import Reviews from "../components/Reviews";
 import BlogRoll from "../components/BlogRoll";
-import FullWidthImage from "../components/FullWidthImage";
 import Banner from "../components/Banner";
+import Contact from "../components/Contact";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -32,16 +32,8 @@ export const IndexPageTemplate = ({
         mainpitch={mainpitch}
       />
       <BlogRoll />
-      <div>
-          <h3 className="has-text-weight-semibold is-size-2">
-            Reviews
-          </h3>
-      </div>
-      <div style={{ backgroundColor: "#F5F5F5" }}>
-          <h3 className="has-text-weight-semibold is-size-2">
-            Free Consultation
-          </h3>
-      </div>
+      <Reviews />
+      <Contact />
     </div>
   );
 };
