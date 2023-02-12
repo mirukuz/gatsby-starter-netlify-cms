@@ -37,7 +37,7 @@ const FormElement = styled.div`
 
 const Contact = () => {
     return (
-        <MaxWidthContainer>
+        <MaxWidthContainer id="contact">
             <Heading>
                 Free Consultation
             </Heading>

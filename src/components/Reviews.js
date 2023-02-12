@@ -69,7 +69,6 @@ const MaxWidthContainer = styled.div`
   display: grid;
   position: relative;
   margin: 0 auto;
-  grid-gap: 24px 100px;
   grid-template-rows: auto auto 24px;
   grid-template-columns: minmax(24px, auto) minmax(auto, 1300px) minmax(
       24px,
@@ -92,9 +91,14 @@ const Contact = () => {
     <MaxWidthContainer>
       <Heading>Reviews</Heading>
       <Carousel>
-        <CarouselItem>Item 1</CarouselItem>
-        <CarouselItem>Item 2</CarouselItem>
-        <CarouselItem>Item 3</CarouselItem>
+        {reviews.map(
+          ({author_name, profile_photo_url, text}) =>
+            <CarouselItem 
+              author={author_name}
+              photo={profile_photo_url}
+              comments={text}
+            />
+        )}
       </Carousel>
     </MaxWidthContainer>
   );

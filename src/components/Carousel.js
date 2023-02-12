@@ -1,13 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import styled from 'styled-components';
 
 import "./Carousel.css";
 
-export const CarouselItem = ({ children, width }) => {
+const Wrapper = styled.div`
+  overflow: hidden;
+  grid-area: carousel;
+`;
+
+const Inner = styled.div`
+  transition: transform 0.3s;
+  display: flex;
+`;
+
+const Item = styled.div`
+  display: inline-flex;
+  align-items: center;
+  height: 200px;
+  padding: 12px;
+  border-radius: 10px;
+  margin-right: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+`;
+
+export const CarouselItem = ({ photo, autor, comments, width }) => {
   return (
-    <div className="carousel-item" style={{ width: width }}>
-      {children}
-    </div>
+    <Item style={{ width: width }}>
+      {autor}
+      {comments}
+    </Item>
   );
 };
 
@@ -45,21 +67,17 @@ const Carousel = ({ children, ...props }) => {
   });
 
   return (
-    <div
-      {...props}
+    <Wrapper
       {...handlers}
-      className="carousel"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div
-        className="inner"
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-      >
+      <Inner>
         {React.Children.map(children, (child, index) => {
-          return React.cloneElement(child, { width: "100%" });
+          const { photo, author, comments } = child.props;
+          return React.cloneElement(child, { photo, author, comments, width: "300px" });
         })}
-      </div>
+      </Inner>
       <div className="indicators">
         <button
           onClick={() => {
@@ -88,7 +106,7 @@ const Carousel = ({ children, ...props }) => {
           Next
         </button>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

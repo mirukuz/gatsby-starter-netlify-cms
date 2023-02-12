@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
 // eslint-disable-next-line
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+export const ServicePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
@@ -26,18 +26,18 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   );
 };
 
-AboutPageTemplate.propTypes = {
+ServicePageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 };
 
-const AboutPage = ({ data }) => {
+const ServicePage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <ServicePageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
@@ -46,14 +46,14 @@ const AboutPage = ({ data }) => {
   );
 };
 
-AboutPage.propTypes = {
+ServicePage.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default AboutPage;
+export default ServicePage;
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
+export const servicePageQuery = graphql`
+  query ServicePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {

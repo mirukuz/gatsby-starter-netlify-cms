@@ -52,22 +52,17 @@ const Navbar = (props) => {
         </div>
         <Ul>
             <Li>
-              <StyledLink to="/about">
-                About
-              </StyledLink>
-            </Li>
-            <Li>
             <StyledLink to="/services">
               Services
             </StyledLink>
             </Li>
             <Li>
             <StyledLink to="/blog">
-              Blog
+              Client cases
             </StyledLink>
             </Li>
             <Li>
-            <StyledLink to="/contact">
+            <StyledLink to="/#contact">
               Contact
             </StyledLink>
             </Li>
