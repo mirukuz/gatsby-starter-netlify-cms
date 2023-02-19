@@ -26,9 +26,9 @@ const Heading = styled.h1`
 const Roll = styled.div`
   grid-area: blog;
   z-index: 1;
-  display: grid;
-  grid-gap: 48px;
-  grid-template-columns: 1fr 1fr 1fr;
+  column-count: 3;
+  column-gap: 16px;
+  padding: 0;
 `;
 
 const ReadMore = styled(Link)`

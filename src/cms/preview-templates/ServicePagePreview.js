@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ServicePageTemplate } from '../../templates/service-page'
 
 const ServicePagePreview = ({ entry, widgetFor }) => (
-  <ServicetPageTemplate
+  <ServicePageTemplate
     title={entry.getIn(['data', 'title'])}
     content={widgetFor('body')}
   />
@@ -16,4 +16,4 @@ ServicePagePreview.propTypes = {
   widgetFor: PropTypes.func,
 }
 
-export default ServicePagePreview
+export default ServicePagePreview;

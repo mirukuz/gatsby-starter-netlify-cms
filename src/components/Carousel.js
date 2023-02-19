@@ -1,37 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import "./Carousel.css";
 
-const Wrapper = styled.div`
-  overflow: hidden;
+const Container = styled.div`
+  position: relative;
   grid-area: carousel;
+  overflow: hidden;
+`;
+
+const Wrapper = styled.div`
+  width: 360px;
+  margin: 0 auto;
 `;
 
 const Inner = styled.div`
   transition: transform 0.3s;
-  display: flex;
+  white-space: nowrap;
 `;
 
-const Item = styled.div`
-  display: inline-flex;
-  align-items: center;
-  height: 200px;
-  padding: 12px;
-  border-radius: 10px;
-  margin-right: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+const Left = styled.button`
+  position: absolute;
+  top: 45%;
+  left: 0;
+  font-size: 36px;
+  padding: 8px;
+  
 `;
 
-export const CarouselItem = ({ photo, autor, comments, width }) => {
-  return (
-    <Item style={{ width: width }}>
-      {autor}
-      {comments}
-    </Item>
-  );
-};
+const Right = styled.button`
+  position: absolute;
+  top: 45%;
+  right: 0;
+  font-size: 36px;
+  padding: 8px;
+`;
 
 const Carousel = ({ children, ...props }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -63,50 +67,38 @@ const Carousel = ({ children, ...props }) => {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => updateIndex(activeIndex + 1),
-    onSwipedRight: () => updateIndex(activeIndex - 1)
+    onSwipedRight: () => updateIndex(activeIndex - 1),
   });
 
   return (
-    <Wrapper
-      {...handlers}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      <Inner>
-        {React.Children.map(children, (child, index) => {
-          const { photo, author, comments } = child.props;
-          return React.cloneElement(child, { photo, author, comments, width: "300px" });
-        })}
-      </Inner>
-      <div className="indicators">
-        <button
+    <Container>
+      <Wrapper
+        {...handlers}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <Inner style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+          {React.Children.map(children, (child, index) => {
+            const { photo, author, comments } = child.props;
+            return React.cloneElement(child, { photo, author, comments });
+          })}
+        </Inner>
+        <Left
           onClick={() => {
             updateIndex(activeIndex - 1);
           }}
         >
-          Prev
-        </button>
-        {React.Children.map(children, (child, index) => {
-          return (
-            <button
-              className={`${index === activeIndex ? "active" : ""}`}
-              onClick={() => {
-                updateIndex(index);
-              }}
-            >
-              {index + 1}
-            </button>
-          );
-        })}
-        <button
+          &#8249;
+        </Left>
+        <Right
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
         >
-          Next
-        </button>
-      </div>
-    </Wrapper>
+          &#8250;
+        </Right>
+      </Wrapper>
+    </Container>
   );
 };
 

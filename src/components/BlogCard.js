@@ -3,17 +3,20 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
-const Article = styled(Link)`
+const Article = styled.div`
   border-radius: 10px;
   background-color: white;
   text-decoration: none;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 100%;
 `;
 const Content = styled.div`
   padding: 16px 24px;
 `;
 const Excerpt = styled.p`
-    color: black;
+  color: black;
 `;
 
 const BlogCard = ({ post }) => {

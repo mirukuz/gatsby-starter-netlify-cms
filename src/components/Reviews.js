@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
-import Carousel, { CarouselItem } from "./Carousel";
+import Carousel from "./Carousel";
+import { CarouselItem } from "./CarouselItem";
 
 const reviews = [
   {
@@ -92,8 +92,10 @@ const Contact = () => {
       <Heading>Reviews</Heading>
       <Carousel>
         {reviews.map(
-          ({author_name, profile_photo_url, text}) =>
+          ({author_name, relative_time_description, profile_photo_url, rating, text}) =>
             <CarouselItem 
+              time={relative_time_description}
+              rating={rating}
               author={author_name}
               photo={profile_photo_url}
               comments={text}

@@ -11,15 +11,25 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
   }
+
+
   h1 {
     font-size: 3rem;
     line-height: 4rem;
   }
+
   h3 {
     font-size: 1.5rem;
     line-height: 1.95rem;
     font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
   }
+
+  h4 {
+    font-size: 1.2rem;
+    line-height: 1.45rem;
+    font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
+  }
+
   p {
     font-size: 1.2rem;
     line-height: 1.56rem;

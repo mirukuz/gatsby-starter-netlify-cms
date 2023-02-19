@@ -80,7 +80,7 @@ module.exports = {
           },
           {
             name: "Source Sans Pro",
-            file: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap"
+            file: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600&display=swap"
           }
         ],
       },
