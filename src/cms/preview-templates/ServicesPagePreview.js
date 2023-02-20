@@ -1,19 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ServicePageTemplate } from '../../templates/service-page'
+import { ServicesPageTemplate } from '../../templates/services-page'
 
-const ServicePagePreview = ({ entry, widgetFor }) => (
-  <ServicePageTemplate
+const ServicesPagePreview = ({ entry, widgetFor }) => (
+  <ServicesPageTemplate
     title={entry.getIn(['data', 'title'])}
     content={widgetFor('body')}
   />
 )
 
-ServicePagePreview.propTypes = {
+ServicesPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   widgetFor: PropTypes.func,
 }
 
-export default ServicePagePreview;
+export default ServicesPagePreview;

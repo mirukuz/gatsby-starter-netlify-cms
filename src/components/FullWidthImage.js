@@ -13,6 +13,7 @@ export default function FullWidthImage(props) {
     height = 650,
     img,
     imgPosition = "top left",
+    withCurve = false,
     ...otherProps
   } = props;
 
@@ -51,9 +52,9 @@ export default function FullWidthImage(props) {
           />
         )}
 
-        <svg style={{ position: "absolute", bottom: 0 }} viewBox="0 0 1512 141" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+        {withCurve && <svg style={{ position: "absolute", bottom: 0 }} viewBox="0 0 1512 141" fill="#fff" xmlns="http://www.w3.org/2000/svg">
           <path fill="#ffffff" fill-opacity="1" d="M617 0C820.889 3.47527e-06 1215.03 29.7209 1512 82.7191V141H0V36.4036C37.2969 23.1115 387.5 -3.9118e-06 617 0Z" fill="white"/>
-        </svg>
+        </svg>}
       </Container>
   );
 }

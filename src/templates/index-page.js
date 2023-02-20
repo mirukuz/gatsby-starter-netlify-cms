@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
@@ -14,14 +14,12 @@ export const IndexPageTemplate = ({
   image,
   agent,
   title,
-  heading,
   subheading,
   mainpitch,
-  description,
-  intro,
+  testimonials,
 }) => {
   const heroImage = getImage(image) || image;
-  const agentImage = getImage(agent) || agent;
+  const agentImage = getImage(agent) || agent
   return (
     <div>
       <Banner
@@ -32,7 +30,7 @@ export const IndexPageTemplate = ({
         mainpitch={mainpitch}
       />
       <BlogRoll />
-      <Reviews />
+      <Reviews testimonials={testimonials}/>
       <Contact />
     </div>
   );
@@ -45,10 +43,7 @@ IndexPageTemplate.propTypes = {
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  testimonials: PropTypes.array,
 };
 
 const IndexPage = ({ data }) => {
@@ -63,8 +58,7 @@ const IndexPage = ({ data }) => {
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        testimonials={frontmatter.testimonials}
       />
     </Layout>
   );
@@ -101,18 +95,12 @@ export const pageQuery = graphql`
           title
           description
         }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-              }
-            }
-            text
-          }
-          heading
-          description
+        testimonials {
+          profile_photo_url
+          text
+          author_name
+          rating
+          relative_time_description
         }
       }
     }

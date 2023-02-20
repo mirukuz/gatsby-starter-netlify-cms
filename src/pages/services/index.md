@@ -1,7 +1,8 @@
 ---
-templateKey: 'service-page'
-path: /service
-title: Service introduction
+templateKey: services-page
+path: /services
+banner: /img/sydney-gradiant.png
+title: Services introduction
 ---
 ### Full Buyers Agent Service(one-stop)
 By giving you the best suburbs base on your borrowing capacity, we use the system we called funnel system to able to filter down from 15K+ suburbs across Australia to the Top 3-5 suburbs. So, you can get into the right direction to avoid unnecessary mistakes.

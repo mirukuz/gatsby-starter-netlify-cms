@@ -9,7 +9,7 @@ const MaxWidthContainer = styled.div`
   display: grid;
   margin: 0 auto;
   min-height: 900px;
-  grid-template-rows: 48px 1fr 1fr 1fr;
+  grid-template-rows: 48px 1fr 2fr 1fr;
   grid-template-columns: minmax(24px,auto) minmax(auto, 850px) 450px minmax(24px,auto);
   grid-template-areas:
     ". nav nav ."
@@ -54,7 +54,7 @@ export default ({ img, title, subheading, agent, mainpitch }) => {
   return (
       <MaxWidthContainer>
         <Navbar style={{ gridArea: "nav", zIndex: 1 }} />
-        <FullWidthImage img={img}  style={{ gridArea: "1/1/4/5" }}/>
+        <FullWidthImage img={img}  withCurve={true} style={{ gridArea: "1/1/4/5" }}/>
         {(title || subheading) && (
             <HeadingsContainer>
             {/* Any content here will be centered in the component */}

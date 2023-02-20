@@ -4,69 +4,49 @@ title: We made property investment easy
 image: /img/sydney-gradiant.png
 agent: /img/agent.png
 heading: Property investment made easy
-subheading: We offer one-stop service for you, hold your hands through the buying process, do all due diligence and hard work for you, we also provide all team members for your needs
+subheading: We offer one-stop service for you, hold your hands through the
+  buying process, do all due diligence and hard work for you, we also provide
+  all team members for your needs
 mainpitch:
   title: Why choose us
   description: >
-    One-stop buying service, stress free
-    We can help you to buy all properties across Australia 
-    Using data systems to select right suburbs to buy
-    Using property analysis to pick the right property
-    Help you to achieve generating passive income and wealth
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
-intro:
-  blurbs:
-    - image: /img/coffee.png
-      text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
-    - image: /img/coffee-gear.png
-      text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
-    - image: /img/tutorials.png
-      text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
-    - image: /img/meeting-space.png
-      text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
-  heading: What we offer
-  description: >
-    Kaldi is the ultimate spot for coffee lovers who want to learn about their
-    java’s origin and support the farmers that grew it. We take coffee
-    production, roasting and brewing seriously and we’re glad to pass that
-    knowledge to anyone. This is an edit via identity...
-main:
-  heading: Great coffee with no compromises
-  description: >
-    We hold our coffee to the highest standards from the shrub to the cup.
-    That’s why we’re meticulous and transparent about each step of the coffee’s
-    journey. We personally visit each farm to make sure the conditions are
-    optimal for the plants, farmers and the local environment.
-  image1:
-    alt: A close-up of a paper filter filled with ground coffee
-    image: /img/products-grid3.jpg
-  image2:
-    alt: A green cup of a coffee on a wooden table
-    image: /img/products-grid2.jpg
-  image3:
-    alt: Coffee beans
-    image: /img/products-grid1.jpg
+    One-stop buying service, stress free We can help you to buy all properties
+    across Australia  Using data systems to select right suburbs to buy Using
+    property analysis to pick the right property Help you to achieve generating
+    passive income and wealth
+testimonials:
+  - rating: 1
+    author_name: Luke Archibald
+    profile_photo_url: https://lh3.googleusercontent.com/a-/AOh14GhGGmTmvtD34HiRgwHdXVJUTzVbxpsk5_JnNKM5MA=s128-c0x00000000-cc-rp-mo
+    relative_time_description: a week ago
+    text: Called regarding paid advertising google pages to the top of its site of a
+      scam furniture website misleading and taking peoples money without ever
+      sending a product - explained the situation,  explained I'd spoken to an
+      ombudsman regarding it.  Listed ticket numbers etc.\n\nThey left the
+      advertisement running.
+  - author_name: Tevita Taufoou
+    text: I need help.  Google Australia is taking my money. Money I don't have any
+      I am having trouble sorting this issue out
+    relative_time_description: 6 months ago
+    rating: 1
+    profile_photo_url: https://lh3.googleusercontent.com/a/AATXAJwZANdRSSg96QeZG--6BazG5uv_BJMIvpZGqwSz=s128-c0x00000000-cc-rp-mo
+  - author_name: Jordy Baker
+    profile_photo_url: https://lh3.googleusercontent.com/a/AATXAJwgg1tM4aVA4nJCMjlfJtHtFZuxF475Vb6tT74S=s128-c0x00000000-cc-rp-mo
+    rating: 3
+    relative_time_description: 4 months ago
+    text: I have literally never been here in my life, I am 17 and they are taking
+      money I don't have for no reason.\n\nThis is not ok. I have rent to pay
+      and my own expenses to deal with and now this.
+  - author_name: Prem Rathod
+    profile_photo_url: https://lh3.googleusercontent.com/a/AATXAJyEQpqs4YvPPzMPG2dnnRTFPC4jxJfn8YXnm2gz=s128-c0x00000000-cc-rp-mo
+    rating: 1
+    relative_time_description: 4 months ago
+    text: Terrible service. all reviews are fake and irrelevant. This is about
+      reviewing google as business not the building/staff etc.
+  - author_name: Husuni Hamza
+    text: Nice site. Please I want to work with you. Am Alhassan Haruna, from Ghana.
+      Contact me +233553851616
+    rating: 5
+    relative_time_description: 7 months ago
+    profile_photo_url: https://lh3.googleusercontent.com/a/AATXAJwRkyvoSlgd06ahkF9XI9D39o6Zc_Oycm5EKuRg=s128-c0x00000000-cc-rp-mo
 ---
