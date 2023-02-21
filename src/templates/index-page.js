@@ -5,7 +5,7 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Reviews from "../components/Reviews";
-import BlogRoll from "../components/BlogRoll";
+import Blog from "../components/Blog";
 import Banner from "../components/Banner";
 import Contact from "../components/Contact";
 
@@ -29,7 +29,7 @@ export const IndexPageTemplate = ({
         subheading={subheading}
         mainpitch={mainpitch}
       />
-      <BlogRoll />
+      <Blog />
       <Reviews testimonials={testimonials}/>
       <Contact />
     </div>

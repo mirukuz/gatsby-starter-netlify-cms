@@ -6,11 +6,12 @@ import styled from "styled-components";
 const MaxWidthContainer = styled.div`
   display: grid;
   margin: 0 auto;
-  grid-template-rows: 48px 1fr;
+  grid-template-rows: 130px 1fr;
   grid-template-columns: minmax(24px,auto) 1fr minmax(24px,auto);
   grid-template-areas:
     ". nav ."
     ". title .";
+    background: linear-gradient(0.25turn, #74653F, #08201A);;
 `;
 
 
@@ -26,7 +27,7 @@ export default ({ img, title }) => {
       <MaxWidthContainer>
         <Navbar style={{ gridArea: "nav", zIndex: 1 }} />
         {title && <Title>{title}</Title>}
-        <FullWidthImage img={img} height={360} style={{ gridArea: "1/1/4/5" }}/>
+        {img && <FullWidthImage img={img} height={360} style={{ gridArea: "1/1/4/5" }}/> }
       </MaxWidthContainer>
   );
 };
