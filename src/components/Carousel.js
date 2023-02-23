@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import styled from "styled-components";
-
-import "./Carousel.css";
+import RightChevron from "../img/right-chevron.js"
+import LeftChevron from "../img/left-chevron.js"
 
 const Container = styled.div`
   position: relative;
@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 360px;
-  margin: 0 auto;
+  margin: 24px auto;
 `;
 
 const Inner = styled.div`
@@ -24,17 +24,36 @@ const Left = styled.button`
   position: absolute;
   top: 45%;
   left: 0;
-  font-size: 36px;
-  padding: 8px;
+  width: 48px;
+  height: 48px;
+  padding-top: 4px;
+  padding-right: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #e1e4ea;
   
+  &:hover {
+    background-color: #e1e4ea;
+    cursor: pointer;
+  }
 `;
 
 const Right = styled.button`
   position: absolute;
   top: 45%;
   right: 0;
-  font-size: 36px;
-  padding: 8px;
+  width: 48px;
+  height: 48px;
+  padding-top: 4px;
+  padding-left: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #e1e4ea;
+
+  &:hover {
+    background-color: #e1e4ea;
+    cursor: pointer;
+  }
 `;
 
 const Carousel = ({ children, ...props }) => {
@@ -88,14 +107,14 @@ const Carousel = ({ children, ...props }) => {
             updateIndex(activeIndex - 1);
           }}
         >
-          &#8249;
+          <LeftChevron />
         </Left>
         <Right
           onClick={() => {
             updateIndex(activeIndex + 1);
           }}
         >
-          &#8250;
+          <RightChevron />
         </Right>
       </Wrapper>
     </Container>

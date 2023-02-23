@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Carousel from "./Carousel";
 import { CarouselItem } from "./CarouselItem";
-import { getImage } from "gatsby-plugin-image";
 
 const MaxWidthContainer = styled.div`
   display: grid;
