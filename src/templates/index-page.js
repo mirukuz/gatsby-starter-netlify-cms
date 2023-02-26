@@ -17,6 +17,7 @@ export const IndexPageTemplate = ({
   subheading,
   mainpitch,
   testimonials,
+  socialmedia
 }) => {
   const heroImage = getImage(image) || image;
   const agentImage = getImage(agent) || agent
@@ -31,7 +32,7 @@ export const IndexPageTemplate = ({
       />
       <Blog />
       <Reviews testimonials={testimonials}/>
-      <Contact />
+      <Contact socialmedia={socialmedia}/>
     </div>
   );
 };
@@ -59,6 +60,7 @@ const IndexPage = ({ data }) => {
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         testimonials={frontmatter.testimonials}
+        socialmedia={frontmatter.socialmedia}
       />
     </Layout>
   );
@@ -94,6 +96,14 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+        }
+        socialmedia {
+          name
+          qr {
+            childImageSharp {
+              gatsbyImageData(width: 100, quality: 100, layout: CONSTRAINED)
+            }
+          }
         }
         testimonials {
           profile_photo_url

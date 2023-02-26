@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import { SecondaryButton } from "./Button";
+import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 const MaxWidthContainer = styled.div`
   display: grid;
   position: relative;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   margin: 0 auto;
-  grid-gap:  24px 100px;
-  grid-template-rows: auto auto 24px;
-  grid-template-columns: minmax(24px,auto) minmax(auto, 600px) minmax(auto, 700px) minmax(24px,auto);
+  grid-template-rows: auto auto 1fr 24px;
+  grid-template-columns:
+    minmax(24px, auto) minmax(auto, 600px) minmax(auto, 700px)
+    minmax(24px, auto);
   grid-template-areas:
     ". heading heading ."
     ". description form ."
+    ". socialmedia form ."
     ". . . .";
 `;
 
@@ -25,49 +28,116 @@ const Description = styled.div`
   grid-area: description;
 `;
 
-const Form = styled.div`
+const SocialMedia = styled.div`
+  grid-area: socialmedia;
+  margin-top: 24px; 
+  display: flex;
+`;
+
+const Card = styled.div`
+  margin-right: 24px;
+`;
+
+const Name = styled.p`
+  margin-bottom: 12px;
+`;
+
+const Form = styled.form`
   grid-area: form;
+  display: grid;
+  grid-template-rows: auto 150px auto;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 16px;
+  grid-template-areas:
+    "name ."
+    "enquiry enquiry"
+    "button .";
 `;
 
 const FormElement = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 18px;
 `;
 
-const Contact = () => {
-    return (
-        <MaxWidthContainer id="contact">
-            <Heading>
-                Free Consultation
-            </Heading>
-            <Description>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut 
-                labore et dolore magna aliqua.
-            </Description>
-            <Form>
-                <FormElement>
-                    <label htmlFor="name">
-                        Name
-                    </label>
-                    <input name="name" />
-                </FormElement>
-                <FormElement>
-                    <label htmlFor="email">
-                        Email
-                    </label>
-                    <input name="email" />
-                </FormElement>
-                <FormElement>
-                    <label htmlFor="enquiry">
-                      Enquiry
-                    </label>
-                    <textarea name="enquiry" />
-                </FormElement>
-            </Form>
-        </MaxWidthContainer>
-    )
-}
+const Label = styled.label`
+  margin-bottom: 8px;
+`;
+
+const Input = styled.input`
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  &:focus {
+    outline: none;
+  }
+`;
+
+const TextArea = styled.textarea`
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  height: 150px;
+  &:focus {
+    outline: none;
+  }
+`;
+
+const Contact = ({ socialmedia }) => {
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const beforeSubmit = (event) => {
+    event.preventDefault();
+    const subject = "Enquiry from " + name;
+    window.location.href =
+      "mailto:info@bennyauproperties.com.au?subject=" +
+      subject +
+      "&body=" +
+      message;
+  };
+  return (
+    <MaxWidthContainer id="contact">
+      <Heading>Free Consultation</Heading>
+      <Description>
+        Feel free to contact us at <br/>
+        info@bennyauproperties.com.au <br/><br/>
+        Or via these social media accounts
+      </Description>
+      <SocialMedia>
+        {socialmedia.map(({ name, qr }) => (
+          <Card>
+            <Name>{name}</Name>
+            <GatsbyImage
+              image={getImage(qr) || qr}
+            />
+          </Card>
+        ))}
+      </SocialMedia>
+      <Form onSubmit={beforeSubmit}>
+        <FormElement style={{ gridArea: "name" }}>
+          <Label htmlFor="subject">Name</Label>
+          <Input
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+            name="subject"
+          />
+        </FormElement>
+        <FormElement style={{ gridArea: "enquiry" }}>
+          <Label htmlFor="body">Enquiry</Label>
+          <TextArea
+            onChange={(e) => setMessage(e.target.value)}
+            value={message}
+            name="body"
+          />
+        </FormElement>
+        <SecondaryButton
+          type="submit"
+          style={{ gridArea: "button", marginTop: 16 }}
+        >
+          Send
+        </SecondaryButton>
+      </Form>
+    </MaxWidthContainer>
+  );
+};
 
 export default Contact;

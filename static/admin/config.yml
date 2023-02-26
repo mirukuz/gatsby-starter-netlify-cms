@@ -74,6 +74,16 @@ collections:
                   { label: Time, name: relative_time_description, widget: string },
                 ],
             }
+          - {
+              label: Social Media,
+              name: socialmedia,
+              widget: list,
+              fields:
+                [
+                  { label: Name, name: name, widget: string },
+                  { label: QR, name: qr, widget: image },
+                ],
+            }
       - file: "src/pages/services/index.md"
         label: "Services"
         name: "services"

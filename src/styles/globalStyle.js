@@ -44,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.2rem;
     line-height: 1.56rem;
   }
+
+  input, textarea {
+    font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
+  }
 `;
  
 export default GlobalStyle;

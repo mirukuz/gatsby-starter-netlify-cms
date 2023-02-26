@@ -49,4 +49,11 @@ testimonials:
     rating: 5
     relative_time_description: 7 months ago
     profile_photo_url: https://lh3.googleusercontent.com/a/AATXAJwRkyvoSlgd06ahkF9XI9D39o6Zc_Oycm5EKuRg=s128-c0x00000000-cc-rp-mo
+socialmedia:
+  - name: Line
+    qr: /img/line.png
+  - name: 小红书
+    qr: /img/xhs.png
+  - name: Wechat
+    qr: /img/wechat.png
 ---

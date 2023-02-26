@@ -12,6 +12,11 @@ const SecButton = styled.button`
     background: linear-gradient(90deg, #5C6263 0%, #0A0D16 100%);
     color: white;
     border: none;
+
+    &:hover {
+        cursor: pointer;
+        background: linear-gradient(90deg, #989E9E 0%, #2F2F2F 100%);
+    }
 `;
 
 export default ({ children, ...props }) => {
