@@ -65,15 +65,15 @@ const Footer = () => {
           <StyledLink to="/">
             About Us
           </StyledLink>
-          <StyledLink to="/">
+          <StyledLink to="/blog">
             Successful Deals
           </StyledLink>
         </MenuCol>
         <MenuCol>
-          <StyledLink to="/">
+          <StyledLink to="/#contact">
             Contact Us
           </StyledLink>
-          <StyledLink to="/">
+          <StyledLink to="/services">
             Services
           </StyledLink>
         </MenuCol>

@@ -14,9 +14,24 @@ const Article = styled.div`
 `;
 const Content = styled.div`
   padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
 `;
-const Excerpt = styled.p`
+const Attribute = styled.div`
+`;
+
+const Title = styled.strong`
+  font-weight: 600;
   color: black;
+`;
+
+const Details = styled.span`
+  padding-left: 5px;
+`
+
+const LearnMore = styled(Link)`
+  text-decoration: none;
+  margin-top: 16px;
 `;
 
 const BlogCard = ({ post }) => {
@@ -37,10 +52,18 @@ const BlogCard = ({ post }) => {
       )}
       <Content>
         {/* <Title to={post.fields.slug}>{post.frontmatter.title}</Title> */}
-        <Excerpt>{post.excerpt}</Excerpt>
-        {/* <Link className="button" to={post.fields.slug}>
-          Keep Reading →
-        </Link> */}
+        {post.frontmatter.state && <Attribute><Title>Location: </Title><Details>{post.frontmatter.state}</Details></Attribute>}
+        <Attribute><Title>House Type: </Title><Details>{post.frontmatter.housetype}</Details></Attribute>
+        <Attribute><Title>Land Size: </Title><Details>{post.frontmatter.landsize}</Details></Attribute>
+        <Attribute><Title>Year of Build: </Title><Details>{post.frontmatter.yearofbuild}</Details></Attribute>
+        <Attribute><Title>Purchased Date: </Title><Details>{post.frontmatter.purchaseddate}</Details></Attribute>
+        <Attribute><Title>Purchased Price: </Title><Details>{post.frontmatter.purchasedprice}</Details></Attribute>
+        <Attribute><Title>Bank Desktop Value: </Title><Details>{post.frontmatter.bankdesktopvalue}</Details></Attribute>
+        <Attribute><Title>Current Rent: </Title><Details>{post.frontmatter.currentrent}</Details></Attribute>
+        <Attribute>{post.frontmatter.keypoint}</Attribute>
+        <LearnMore to={post.fields.slug}>
+          Learn More
+        </LearnMore>
       </Content>
     </Article>
   );

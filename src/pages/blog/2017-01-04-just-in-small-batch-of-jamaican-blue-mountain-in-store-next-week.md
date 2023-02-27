@@ -20,6 +20,15 @@ tags:
   - green beans
   - flavor
   - tasting
+housetype: Free standing house, 3 2 3 (fully renovated)
+state: Regional QLD
+landsize: 809m2
+yearofbuild: "1972"
+purchaseddate: Dec. 2022
+purchasedprice: $431800
+bankdesktopvalue: $482000 (Jan/23)
+currentrent: $510
+keypoint: Closed the deal under market value, making money on the way in.
 ---
 Location: Regional QLD
 

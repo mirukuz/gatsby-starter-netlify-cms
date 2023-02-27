@@ -1,23 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-import styled from 'styled-components';
+import styled from "styled-components";
 import Layout from "../components/Layout";
 import PageBanner from "../components/PageBanner";
 import Content, { HTMLContent } from "../components/Content";
 
-const Container = styled.div`
+const MaxWidthContainer = styled.div`
+  display: grid;
+  position: relative;
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  padding: 48px 0;
+  grid-template-columns: minmax(24px, auto) minmax(auto, 1300px) minmax(
+      24px,
+      auto
+    );
+  grid-template-areas: ". content .";
 `;
-// eslint-disable-next-line
-export const ServicesPageTemplate = ({ title, content, contentComponent, banner }) => {
+
+export const ServicesPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
-  const bannerImage = getImage(banner) || banner;
   return (
-    <Container>
-      <PageBanner title={title} img={bannerImage} />
-      <PageContent className="content" content={content} />
-    </Container>
+    <>
+      <PageBanner title={title} />
+      <MaxWidthContainer>
+        <PageContent style={{ gridArea: "content" }} content={content} />
+      </MaxWidthContainer>
+    </>
   );
 };
 
@@ -55,11 +65,6 @@ export const servicesPageQuery = graphql`
       html
       frontmatter {
         title
-        banner {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
       }
     }
   }

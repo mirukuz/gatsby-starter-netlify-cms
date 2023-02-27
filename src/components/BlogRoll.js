@@ -51,6 +51,15 @@ export default function BlogRoll() {
                 }
                 frontmatter {
                   title
+                  housetype
+                  landsize
+                  yearofbuild
+                  purchasedprice
+                  purchaseddate
+                  bankdesktopvalue
+                  currentrent
+                  keypoint
+                  state
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
                   featuredpost

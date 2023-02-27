@@ -22,7 +22,7 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <PageBanner />
+        <PageBanner title="Client Cases" />
         <MaxWidthContainer>
           <BlogRoll />
         </MaxWidthContainer>
