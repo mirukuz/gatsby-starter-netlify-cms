@@ -7,12 +7,13 @@ const MaxWidthContainer = styled.div`
   display: grid;
   position: relative;
   margin: 0 auto;
-  grid-template-rows: auto auto 24px;
+  grid-template-rows: 24px auto auto 24px;
   grid-template-columns: minmax(24px, auto) minmax(auto, 1300px) minmax(
       24px,
       auto
     );
   grid-template-areas:
+    ". . ."
     ". heading ."
     ". carousel ."
     ". . .";

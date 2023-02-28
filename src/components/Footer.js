@@ -3,22 +3,22 @@ import { Link } from "gatsby";
 
 import styled from "styled-components";
 import logo from "../img/logo.png";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
-import vimeo from "../img/social/vimeo.svg";
 
 const MaxWidthContainer = styled.div`
   display: grid;
   position: relative;
   background-color: #0E100A;
   margin: 0 auto;
-  grid-template-rows: 24px auto 24px ;
-  grid-template-columns: minmax(24px,auto) minmax(auto, 300px) minmax(auto, 1000px) minmax(24px,auto);
+  grid-template-rows: 24px auto 48px ;
+  grid-template-columns: minmax(24px,auto) minmax(auto, 200px) minmax(auto, 1000px) minmax(24px,auto);
   grid-template-areas:
     ". . . ."
     ". logo link ."
+    ". copyright copyright ."
     ". . . .";
+  @media only screen and (min-width: 960px) {
+    grid-template-columns: minmax(24px,auto) minmax(auto, 300px) minmax(auto, 1000px) minmax(24px,auto);
+  }
 `;
 
 const Logo = styled.div`
@@ -29,6 +29,10 @@ const Menu = styled.div`
   grid-area: link;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  @media only screen and (min-width: 960px) {
+    flex-direction: row;
+  }
 `;
 
 const MenuCol = styled.div`
@@ -40,6 +44,12 @@ const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
   margin-bottom: 24px;
+`;
+
+const CopyRight = styled.div`
+  grid-area: copyright;
+  margin: 8px auto;
+  color: white;
 `;
 
 const Footer = () => {
@@ -78,6 +88,7 @@ const Footer = () => {
           </StyledLink>
         </MenuCol>
       </Menu>
+      <CopyRight>@ 2023 Benny AU Properties - All rights reserved. </CopyRight>
 
     </MaxWidthContainer>
   )

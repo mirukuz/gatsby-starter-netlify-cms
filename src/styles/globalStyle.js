@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Source Sans Pro', Helvetica, Sans-Serif;
   }
 
-  p, span {
+  p, span, label, a {
     font-size: 1.2rem;
     line-height: 1.56rem;
     font-family: 'Source Sans Pro', Helvetica, Sans-Serif;

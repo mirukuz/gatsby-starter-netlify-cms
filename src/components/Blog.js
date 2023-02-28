@@ -19,7 +19,7 @@ const MaxWidthContainer = styled.div`
 
 const Heading = styled.h1`
   grid-area: heading;
-  margin: 24px auto;
+  margin: 48px auto;
 `;
 
 const ReadMore = styled(Link)`

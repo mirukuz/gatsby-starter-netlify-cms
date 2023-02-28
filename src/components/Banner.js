@@ -10,30 +10,46 @@ const MaxWidthContainer = styled.div`
   display: grid;
   margin: 0 auto;
   min-height: 960px;
-  grid-template-rows: 48px 1fr 1.5fr 1fr;
-  grid-template-columns: minmax(24px,auto) minmax(auto, 850px) 450px minmax(24px,auto);
+
+  grid-template-columns: minmax(24px, auto) minmax(auto, 1300px) minmax(
+      24px,
+      auto
+    );
   grid-template-areas:
-    ". nav nav ."
-    ". . agent ."
-    ". headings agent ."
-    ". mainpitch agent .";
+    ". nav ."
+    ". . ."
+    ". headings ."
+    ". mainpitch .";
+  
+  @media only screen and (min-width: 960px) {
+    grid-template-rows: 48px 0.8fr 1.5fr 1fr;
+    grid-template-columns: minmax(24px, auto) minmax(auto, 850px) 450px minmax(
+        24px,
+        auto
+      );
+    grid-template-areas:
+      ". nav nav ."
+      ". . agent ."
+      ". headings agent ."
+      ". mainpitch agent .";
+  }
 `;
 
 const BookButton = styled(Button)`
-    margin-top: 12px;
-    align-self: flex-start;
+  margin-top: 24px;
+  align-self: flex-start;
 `;
 
 const HeadingsContainer = styled.div`
-    grid-area: headings;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+  grid-area: headings;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 `;
 
 const MainpitchContainer = styled.div`
-    grid-area: mainpitch;
-    z-index: 1;
+  grid-area: mainpitch;
+  z-index: 1;
 `;
 
 const Title = styled.h1`
@@ -48,7 +64,7 @@ const Subheading = styled.h3`
 const MainpitchTitle = styled.h1``;
 
 const MainpitchDescription = styled.h3`
-    margin-top: 0.25em;
+  margin-top: 0.25em;
 `;
 
 const LearnMore = styled(Link)`
@@ -63,31 +79,47 @@ const LearnMore = styled(Link)`
   }
 `;
 
+const Agent = styled(GatsbyImage)`
+  grid-area: agent;
+  @media only screen and (max-width: 960px) {
+    display: none;
+  }
+`;
+
 export default ({ img, title, subheading, agent, mainpitch }) => {
   return (
-      <MaxWidthContainer>
-        <Navbar style={{ gridArea: "nav", zIndex: 1 }} />
-        <FullWidthImage img={img}  withCurve={true} style={{ gridArea: "1/1/4/5" }}/>
-        {(title || subheading) && (
-            <HeadingsContainer>
-            {/* Any content here will be centered in the component */}
-            {title && <Title>{title}</Title>}
-            {subheading && <Subheading>{subheading}</Subheading>}
-            <BookButton onClick={() => {navigate("/#contact")}}>Book a call today</BookButton>
-            </HeadingsContainer>
-        )}
-        <GatsbyImage
-            style={{ gridArea: "agent" }}
-            image={agent}
-            // This is a presentational image, so the alt should be an empty string
-            alt="agent photo"
-            formats={["auto", "webp", "avif"]}
-        />
-        <MainpitchContainer>
-            <MainpitchTitle>{mainpitch.title}</MainpitchTitle>
-            <MainpitchDescription>{mainpitch.description}</MainpitchDescription>
-            <LearnMore to="/services">Learn more &#8250;</LearnMore>
-        </MainpitchContainer> 
-      </MaxWidthContainer>
+    <MaxWidthContainer>
+      <Navbar style={{ gridArea: "nav", zIndex: 1 }} />
+      <FullWidthImage
+        img={img}
+        withCurve={true}
+        style={{ gridArea: "1/1/4/5" }}
+      />
+      {(title || subheading) && (
+        <HeadingsContainer>
+          {/* Any content here will be centered in the component */}
+          {title && <Title>{title}</Title>}
+          {subheading && <Subheading>{subheading}</Subheading>}
+          <BookButton
+            onClick={() => {
+              navigate("/#contact");
+            }}
+          >
+            Book a call today
+          </BookButton>
+        </HeadingsContainer>
+      )}
+      <Agent
+        image={agent}
+        // This is a presentational image, so the alt should be an empty string
+        alt="agent photo"
+        formats={["auto", "webp", "avif"]}
+      />
+      <MainpitchContainer>
+        <MainpitchTitle>{mainpitch.title}</MainpitchTitle>
+        <MainpitchDescription>{mainpitch.description}</MainpitchDescription>
+        <LearnMore to="/services">Learn more &#8250;</LearnMore>
+      </MainpitchContainer>
+    </MaxWidthContainer>
   );
 };

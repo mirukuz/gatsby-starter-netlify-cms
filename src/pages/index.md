@@ -4,16 +4,16 @@ title: We made property investment easy
 image: /img/sydney-gradiant.png
 agent: /img/agent.png
 heading: Property investment made easy
-subheading: We offer one-stop service for you, hold your hands through the
-  buying process, do all due diligence and hard work for you, we also provide
-  all team members for your needs
+subheading: We understand that buying a property can be a daunting task, so we
+  take care of all the due diligence and hard work for you. Our goal is to
+  ensure that you can sit back and relax while we do the heavy lifting.
 mainpitch:
   title: Why choose us
   description: >
-    One-stop buying service, stress free We can help you to buy all properties
-    across Australia  Using data systems to select right suburbs to buy Using
-    property analysis to pick the right property Help you to achieve generating
-    passive income and wealth
+    We are excited to offer you our comprehensive one-stop buying service,
+    designed to help you purchase properties across Australia and generate
+    passive income. Our team is committed to providing you with a stress-free
+    experience.
 testimonials:
   - rating: 1
     author_name: Luke Archibald
@@ -51,8 +51,11 @@ testimonials:
 socialmedia:
   - name: Line
     qr: /img/line.png
+    link: https://line.me/ti/p/q9ncbIefyL
   - name: 小红书
     qr: /img/xhs.png
+    link: http://xhslink.com/NeMBEn
   - name: Wechat
     qr: /img/wechat.png
+    link: https://u.wechat.com/kKaE-ZQSsjmyrNF8eFxcENo
 ---

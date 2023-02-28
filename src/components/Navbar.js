@@ -10,9 +10,12 @@ const Container = styled.nav`
 `;
 
 const Ul = styled.ul`
-  width: 100%;
-  grid-area: 1/2;
-  display: flex;
+display: none;
+@media only screen and (min-width: 960px) {
+    width: 100%;
+    grid-area: 1/2;
+    display: flex;
+  }
 `;
 
 const Li = styled.li`

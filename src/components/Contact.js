@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { SecondaryButton } from "./Button";
+import { Link } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 const MaxWidthContainer = styled.div`
@@ -8,38 +9,53 @@ const MaxWidthContainer = styled.div`
   position: relative;
   background-color: #f5f5f5;
   margin: 0 auto;
-  grid-template-rows: auto auto 1fr 24px;
+  padding-bottom: 48px;
   grid-template-columns:
-    minmax(24px, auto) minmax(auto, 600px) minmax(auto, 700px)
+    minmax(24px, auto) minmax(auto, 960px)
     minmax(24px, auto);
   grid-template-areas:
-    ". heading heading ."
-    ". description form ."
-    ". socialmedia form ."
-    ". . . .";
+    ". heading ."
+    ". description ."
+    ". socialmedia ."
+    ". form .";
+
+  @media only screen and (min-width: 960px) {
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns:
+      minmax(24px, auto) minmax(auto, 600px) minmax(auto, 700px)
+      minmax(24px, auto);
+    grid-template-areas:
+      ". heading heading ."
+      ". description form ."
+      ". socialmedia form .";
+  }
 `;
 
 const Heading = styled.h1`
   grid-area: heading;
-  margin: 24px auto;
+  margin: 48px auto;
 `;
 
-const Description = styled.div`
+const Description = styled.p`
   grid-area: description;
 `;
 
 const SocialMedia = styled.div`
   grid-area: socialmedia;
-  margin-top: 24px; 
+  margin-top: 24px;
   display: flex;
 `;
 
 const Card = styled.div`
   margin-right: 24px;
+  display: flex;
+  flex-direction: column;
 `;
 
-const Name = styled.p`
+const Name = styled(Link)`
   margin-bottom: 12px;
+  text-decoration: none;
+  color: black;
 `;
 
 const Form = styled.form`
@@ -98,19 +114,19 @@ const Contact = ({ socialmedia }) => {
     <MaxWidthContainer id="contact">
       <Heading>Free Consultation</Heading>
       <Description>
-        Feel free to contact us at <br/>
-        info@bennyauproperties.com.au <br/><br/>
+        Feel free to contact us at <br />
+        info@bennyauproperties.com.au <br />
+        <br />
         Or via these social media accounts
       </Description>
       <SocialMedia>
-        {socialmedia.map(({ name, qr }) => (
-          <Card>
-            <Name>{name}</Name>
-            <GatsbyImage
-              image={getImage(qr) || qr}
-            />
-          </Card>
-        ))}
+        {socialmedia &&
+          socialmedia.map(({ name, qr, link }) => (
+            <Card>
+              <Name to={link}>{name}</Name>
+              <GatsbyImage image={getImage(qr) || qr} />
+            </Card>
+          ))}
       </SocialMedia>
       <Form onSubmit={beforeSubmit}>
         <FormElement style={{ gridArea: "name" }}>

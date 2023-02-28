@@ -99,6 +99,7 @@ export const pageQuery = graphql`
         }
         socialmedia {
           name
+          link
           qr {
             childImageSharp {
               gatsbyImageData(width: 100, quality: 100, layout: CONSTRAINED)

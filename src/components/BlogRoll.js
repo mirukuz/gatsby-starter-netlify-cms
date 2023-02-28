@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { graphql, StaticQuery } from 'gatsby'
-import BlogCard from './BlogCard';
+import { graphql, StaticQuery } from "gatsby";
+import BlogCard from "./BlogCard";
 
 const Roll = styled.div`
   grid-area: blog;
@@ -10,19 +10,20 @@ const Roll = styled.div`
   column-count: 3;
   column-gap: 16px;
   padding: 0;
+  @media only screen and (max-width: 960px) {
+    column-count: 1;
+  }
 `;
 
-const BlogRollTemplate = (props) => {  
+const BlogRollTemplate = (props) => {
   const { edges: posts } = props.data.allMarkdownRemark;
   return (
     <Roll>
-    {posts &&
-        posts.slice(0,6).map(({ node: post }) => (
-        <BlogCard post={post} />
-        ))}
+      {posts &&
+        posts.slice(0, 6).map(({ node: post }) => <BlogCard post={post} />)}
     </Roll>
-  )
-}
+  );
+};
 
 BlogRollTemplate.propTypes = {
   data: PropTypes.shape({
@@ -30,8 +31,7 @@ BlogRollTemplate.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-}
-
+};
 
 export default function BlogRoll() {
   return (
@@ -65,10 +65,7 @@ export default function BlogRoll() {
                   featuredpost
                   featuredimage {
                     childImageSharp {
-                      gatsbyImageData(
-                        layout: FULL_WIDTH
-                      )
-
+                      gatsbyImageData(layout: FULL_WIDTH)
                     }
                   }
                 }
