@@ -5,6 +5,21 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
+import styled from "styled-components";
+import PageBanner from "../components/PageBanner";
+
+const MaxWidthContainer = styled.div`
+  display: grid;
+  position: relative;
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  padding: 48px 0;
+  grid-template-columns: minmax(24px, auto) minmax(auto, 1300px) minmax(
+      24px,
+      auto
+    );
+  grid-template-areas: ". content .";
+`;
 
 // eslint-disable-next-line
 export const BlogPostTemplate = ({
@@ -18,32 +33,29 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <>
+      <PageBanner />
       {helmet || ""}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
+      <MaxWidthContainer>
+        <div style={{ gridArea: "content" }}>
+          <h1>{title}</h1>
+          <p>{description}</p>
+          <PostContent content={content} />
+          {tags && tags.length ? (
+            <div style={{ marginTop: `4rem` }}>
+              <h4>Tags</h4>
+              <ul className="taglist">
+                {tags.map((tag) => (
+                  <li key={tag + `tag`}>
+                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
         </div>
-      </div>
-    </section>
+      </MaxWidthContainer>
+    </>
   );
 };
 

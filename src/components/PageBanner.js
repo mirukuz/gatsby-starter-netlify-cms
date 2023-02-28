@@ -27,7 +27,7 @@ export default ({ img, title }) => {
       <MaxWidthContainer>
         <Navbar style={{ gridArea: "nav", zIndex: 1 }} />
         {title && <Title>{title}</Title>}
-        <FullWidthImage img={img} height={360} style={{ gridArea: "1/1/4/5" }}/>
+        <FullWidthImage img={img} height={title ? 360 : 130} style={{ gridArea: "1/1/4/5" }}/>
       </MaxWidthContainer>
   );
 };

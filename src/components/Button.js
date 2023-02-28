@@ -5,6 +5,10 @@ const PrimaryButton = styled.button`
     padding: 12px 24px;
     background: linear-gradient(90deg, #FDC03C 0%, #FFD08A 100%);
     border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 const SecButton = styled.button`

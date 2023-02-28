@@ -3,13 +3,14 @@ import FullWidthImage from "./FullWidthImage";
 import Navbar from "./Navbar";
 import Button from "./Button";
 import styled from "styled-components";
+import { Link, navigate } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const MaxWidthContainer = styled.div`
   display: grid;
   margin: 0 auto;
-  min-height: 900px;
-  grid-template-rows: 48px 1fr 2fr 1fr;
+  min-height: 960px;
+  grid-template-rows: 48px 1fr 1.5fr 1fr;
   grid-template-columns: minmax(24px,auto) minmax(auto, 850px) 450px minmax(24px,auto);
   grid-template-areas:
     ". nav nav ."
@@ -50,6 +51,18 @@ const MainpitchDescription = styled.h3`
     margin-top: 0.25em;
 `;
 
+const LearnMore = styled(Link)`
+  font-size: 1.6rem;
+  line-height: 4rem;
+  color: #365b6d;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: #637f8d;
+  }
+`;
+
 export default ({ img, title, subheading, agent, mainpitch }) => {
   return (
       <MaxWidthContainer>
@@ -60,7 +73,7 @@ export default ({ img, title, subheading, agent, mainpitch }) => {
             {/* Any content here will be centered in the component */}
             {title && <Title>{title}</Title>}
             {subheading && <Subheading>{subheading}</Subheading>}
-            <BookButton>Book a call today</BookButton>
+            <BookButton onClick={() => {navigate("/#contact")}}>Book a call today</BookButton>
             </HeadingsContainer>
         )}
         <GatsbyImage
@@ -73,6 +86,7 @@ export default ({ img, title, subheading, agent, mainpitch }) => {
         <MainpitchContainer>
             <MainpitchTitle>{mainpitch.title}</MainpitchTitle>
             <MainpitchDescription>{mainpitch.description}</MainpitchDescription>
+            <LearnMore to="/services">Learn more &#8250;</LearnMore>
         </MainpitchContainer> 
       </MaxWidthContainer>
   );

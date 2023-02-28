@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 const Article = styled.div`
@@ -11,6 +11,11 @@ const Article = styled.div`
   overflow: hidden;
   margin-bottom: 10px;
   width: 100%;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px;
+  }
 `;
 const Content = styled.div`
   padding: 16px 24px;
@@ -21,22 +26,15 @@ const Attribute = styled.div`
 `;
 
 const Title = styled.strong`
-  font-weight: 600;
-  color: black;
 `;
 
 const Details = styled.span`
   padding-left: 5px;
 `
 
-const LearnMore = styled(Link)`
-  text-decoration: none;
-  margin-top: 16px;
-`;
-
 const BlogCard = ({ post }) => {
   return (
-    <Article to={post.fields.slug}>
+    <Article onClick={() => navigate(post.fields.slug)}>
       {post?.frontmatter?.featuredimage && (
         <div className="featured-thumbnail">
           <PreviewCompatibleImage
@@ -60,10 +58,7 @@ const BlogCard = ({ post }) => {
         <Attribute><Title>Purchased Price: </Title><Details>{post.frontmatter.purchasedprice}</Details></Attribute>
         <Attribute><Title>Bank Desktop Value: </Title><Details>{post.frontmatter.bankdesktopvalue}</Details></Attribute>
         <Attribute><Title>Current Rent: </Title><Details>{post.frontmatter.currentrent}</Details></Attribute>
-        <Attribute>{post.frontmatter.keypoint}</Attribute>
-        <LearnMore to={post.fields.slug}>
-          Learn More
-        </LearnMore>
+        <Attribute><Title>Key Point: </Title><Details>{post.frontmatter.keypoint}</Details></Attribute>
       </Content>
     </Article>
   );

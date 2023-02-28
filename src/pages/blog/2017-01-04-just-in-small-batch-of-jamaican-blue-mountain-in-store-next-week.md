@@ -1,18 +1,8 @@
 ---
 templateKey: blog-post
-title: test3
+title: Client case 1
 date: 2017-01-04T15:04:10.000Z
-description: |-
-  Location: Regional QLD
-  House Type: free standing house, 3 2 3 (fully renovated)
-  Land size: 809m2
-  Year of build:1972
-  Purchased date: Dec. 2022
-  Purchased Price: $431800
-  Bank valuation: $482000 (Jan/23)
-  Currant rent: $510
-  Key point:
-  Closed the deal under market value, making money on the way in.
+description: ""
 featuredpost: true
 featuredimage: /img/screen-shot-2023-02-06-at-7.58.07-am.png
 tags:
@@ -30,22 +20,3 @@ bankdesktopvalue: $482000 (Jan/23)
 currentrent: $510
 keypoint: Closed the deal under market value, making money on the way in.
 ---
-Location: Regional QLD
-
-House Type: free standing house, 3 2 3 (fully renovated)
-
-Land size: 809m2
-
-Year of build:1972
-
-Purchased date: Dec. 2022
-
-Purchased Price: $431800
-
-Bank valuation: $482000 (Jan/23)
-
-Currant rent: $510
-
-Key point:
-
-Closed the deal under market value, making money on the way in.

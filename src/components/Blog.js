@@ -31,7 +31,7 @@ const BlogTmeplate = (props) => {
   return (
     <MaxWidthContainer>
       <Heading>
-        Latest Stories
+        Latest deals from our clients
       </Heading>
       <BlogRoll />
       <ReadMore to="/blog">
@@ -39,7 +39,7 @@ const BlogTmeplate = (props) => {
           Read more
         </SecondaryButton>
       </ReadMore>
-      <svg style={{ position: "absolute", bottom: 0 }} width="1511" height="168" viewBox="0 0 1511 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg style={{ position: "absolute", bottom: 0 }} viewBox="0 0 1511 168" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M1516 167.5L1 1V167.5H1516Z" fill="white" stroke="white"/>
       </svg>
     </MaxWidthContainer>

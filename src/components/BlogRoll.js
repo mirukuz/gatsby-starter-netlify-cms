@@ -17,7 +17,7 @@ const BlogRollTemplate = (props) => {
   return (
     <Roll>
     {posts &&
-        posts.map(({ node: post }) => (
+        posts.slice(0,6).map(({ node: post }) => (
         <BlogCard post={post} />
         ))}
     </Roll>
