@@ -7,7 +7,7 @@ const MaxWidthContainer = styled.div`
   display: grid;
   margin: 0 auto;
   grid-template-rows: 130px 1fr;
-  grid-template-columns: minmax(24px,auto) 1fr minmax(24px,auto);
+  grid-template-columns: minmax(24px,auto) minmax(auto, 1300px) minmax(24px,auto);
   grid-template-areas:
     ". nav ."
     ". title .";
@@ -27,7 +27,7 @@ export default ({ img, title }) => {
       <MaxWidthContainer>
         <Navbar style={{ gridArea: "nav", zIndex: 1 }} />
         {title && <Title>{title}</Title>}
-        <FullWidthImage img={img} height={title ? 360 : 130} style={{ gridArea: "1/1/4/5" }}/>
+        <FullWidthImage img={img} height={title ? 360 : 130} style={{ gridArea: "1/1/3/4" }}/>
       </MaxWidthContainer>
   );
 };

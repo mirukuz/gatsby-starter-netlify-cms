@@ -4,17 +4,22 @@ path: /services
 banner: /img/sydney-gradiant.png
 title: Services introduction
 ---
-### Full Buyers Agent Service(one-stop)
-By giving you the best suburbs base on your borrowing capacity, we use the system we called funnel system to able to filter down from 15K+ suburbs across Australia to the Top 3-5 suburbs. So, you can get into the right direction to avoid unnecessary mistakes.
-Give you general info of suburbs, such as what type of houses need to avoid, what type of location in that suburb you should look for…etc
+We are delighted to offer you our one-stop full buyer agent service. Our goal is to help you find the perfect property that meets your needs and suits your budget.
 
-From start to finish!! 
-We do all the hard work for you, so you can sit back and relax. After signed the service agreement, that’s what it happens next: 
-Stage1-Finding out your borrowing from quality broker. 
-Stage2-Suburbs selections 
-Stage3-Targeting right properties, and inspection. 
-Stage4-Negotiate, put the offers, if offer accepted then goes to 
-Stage5-exchage contract for sale, and wait for settlement, in the meaning time will organize B&P inspection. 
-Final stage-hand over keys and start enjoying passive income and grow wealth.
+Our team uses a unique system called the funnel system to narrow down the overwhelming options of 15K+ suburbs across Australia to the Top 3-5 suburbs that match your borrowing capacity. This ensures that you are on the right track from the start and avoid any unnecessary mistakes. We will provide you with essential information about suburbs, including what type of houses to avoid, and what location in the suburb you should look for.
 
-Note: We will provide all team members you need, so there are no hassles you need to worry about. 
+We understand that property hunting can be stressful, so we take care of all the hard work for you, leaving you to sit back and relax. Once you sign our service agreement, the following stages will take place:
+
+**Stage 1:** We will connect you with a quality broker to determine your borrowing capacity.
+
+**Stage 2:** Our team will help you select the most suitable suburbs.
+
+**Stage 3:** We will target the right properties and arrange inspections.
+
+**Stage 4:** Our team will negotiate and make offers on your behalf.
+
+**Stage 5:** If your offer is accepted, we will exchange the contract for sale, and you can start preparing for settlement. Meanwhile, we will organize a Building and Pest inspection.
+
+Final stage: Once settlement is complete, we will hand over the keys, and you can start enjoying the passive income and grow your wealth.
+
+We take pride in providing you with a hassle-free experience. Our team consists of all the members you need to make the process smooth and efficient. We are always here to assist you, and we look forward to being a part of your property journey.

@@ -31,7 +31,6 @@ collections:
       - { label: "Featured Post", name: "featuredpost", widget: "boolean", required: false }
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown", required: false }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "House Type", name: "housetype", widget: "string", required: false }
       - { label: "State", name: "state", widget: "string", required: false }
       - { label: "Land Size", name: "landsize", widget: "string", required: false }

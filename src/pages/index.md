@@ -22,8 +22,7 @@ testimonials:
     text: Called regarding paid advertising google pages to the top of its site of a
       scam furniture website misleading and taking peoples money without ever
       sending a product - explained the situation,  explained I'd spoken to an
-      ombudsman regarding it.  Listed ticket numbers etc.\n\nThey left the
-      advertisement running.
+      ombudsman regarding it.  Listed ticket numbers etc.
   - author_name: Tevita Taufoou
     text: I need help.  Google Australia is taking my money. Money I don't have any
       I am having trouble sorting this issue out

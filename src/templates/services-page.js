@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import PageBanner from "../components/PageBanner";
+import { Link } from "gatsby";
 import Content, { HTMLContent } from "../components/Content";
 
 const MaxWidthContainer = styled.div`
@@ -16,7 +17,21 @@ const MaxWidthContainer = styled.div`
       24px,
       auto
     );
-  grid-template-areas: ". content .";
+  grid-template-areas:
+    ". content ."
+    ". book .";
+`;
+
+const LearnMore = styled(Link)`
+  font-size: 1.6rem;
+  line-height: 4rem;
+  color: #365b6d;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: #637f8d;
+  }
 `;
 
 export const ServicesPageTemplate = ({ title, content, contentComponent }) => {
@@ -26,6 +41,7 @@ export const ServicesPageTemplate = ({ title, content, contentComponent }) => {
       <PageBanner title={title} />
       <MaxWidthContainer>
         <PageContent style={{ gridArea: "content" }} content={content} />
+        <LearnMore style={{ gridArea: "book" }} to="/#contact">Book a call today &#8250;</LearnMore>
       </MaxWidthContainer>
     </>
   );
