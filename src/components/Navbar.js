@@ -2,19 +2,44 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import logo from "../img/logo.png";
+import Hamburger from "hamburger-react";
 
 const Container = styled.nav`
   margin-top: 24px;
   display: grid;
-  grid-template-columns: 88px auto;
+  grid-template-columns: 8em 1fr 48px;
+    grid-template-areas: "logo . nav";
+  @media only screen and (min-width: 960px) {
+    grid-template-columns: 8em auto;
+  grid-template-areas: "logo nav";
+  }
 `;
 
 const Ul = styled.ul`
-display: none;
-@media only screen and (min-width: 960px) {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 80vw;
+  transform: ${({isOpen}) =>  isOpen? `translateX(0)`  : `translateX(-80vw)`};
+  transition: transform 0.3s ease-in-out ;
+  background-color: #060808;
+  @media only screen and (min-width: 960px) {
+    transform: none;
+    transition: none;
+    position: initial;
     width: 100%;
-    grid-area: 1/2;
+    height: auto;
+    background-color: transparent;
+    grid-area: nav;
     display: flex;
+  }
+`;
+
+const MenuIcon = styled.div`
+  grid-area: nav;
+  @media only screen and (min-width: 960px) {
+    display: none;
   }
 `;
 
@@ -26,49 +51,35 @@ const Li = styled.li`
 const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
+  font-size: 1.5rem;
+  @media only screen and (max-width: 960px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Navbar = (props) => {
-  const [isActive, setIsActive] = useState(false);
-
+  const [isOpen, setOpen] = useState(false);
   return (
-    <nav
-      role="navigation"
-      aria-label="main-navigation"
-      {...props}
-    >
+    <nav role="navigation" aria-label="main-navigation" {...props}>
       <Container>
+        <MenuIcon>
+          <Hamburger color="white" toggled={isOpen} toggle={setOpen} />
+        </MenuIcon>
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
-            <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
+            <img src={logo} alt="Benny AU Properties" style={{ width: "6em", height: "6em" }} />
           </Link>
-          {/* Hamburger menu */}
-          {/* <button
-            className={`navbar-burger burger ${isActive && "is-active"}`}
-            aria-expanded={isActive}
-            onClick={() => setIsActive(!isActive)}
-          >
-            <span />
-            <span />
-            <span />
-          </button> */}
         </div>
-        <Ul>
-            <Li>
-            <StyledLink to="/services">
-              Services
-            </StyledLink>
-            </Li>
-            <Li>
-            <StyledLink to="/blog">
-              Client cases
-            </StyledLink>
-            </Li>
-            <Li>
-            <StyledLink to="/#contact">
-              Contact
-            </StyledLink>
-            </Li>
+        <Ul isOpen={isOpen}>
+          <Li>
+            <StyledLink to="/services">Services</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/blog">Client cases</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/#contact">Contact</StyledLink>
+          </Li>
         </Ul>
       </Container>
     </nav>

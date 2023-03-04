@@ -59,7 +59,7 @@ const Footer = () => {
         <img
           src={logo}
           alt="bennyauproperty"
-          style={{ width: "4em", height: "4em" }}
+          style={{ width: "10em", height: "10em" }}
         />
       </Logo>
       <Menu>

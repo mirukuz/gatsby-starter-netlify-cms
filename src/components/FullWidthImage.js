@@ -55,19 +55,10 @@ export default function FullWidthImage(props) {
       )}
 
       {withCurve && (
-        <svg
-          style={{ position: "absolute", bottom: 0 }}
-          viewBox="0 0 1512 141"
-          fill="#fff"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="#ffffff"
-            fill-opacity="1"
-            d="M617 0C820.889 3.47527e-06 1215.03 29.7209 1512 82.7191V141H0V36.4036C37.2969 23.1115 387.5 -3.9118e-06 617 0Z"
-            fill="white"
-          />
+        <svg  style={{ position: "absolute", bottom: -1 }}  viewBox="0 0 1507 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M450 4.5001C1055.5 -16 1506.29 47.5058 1506.29 47.5058L-5.7146 47.5058C-14.2146 47.5058 155.998 14.454 450 4.5001Z" fill="white"/>
         </svg>
+        
       )}
     </Container>
   );

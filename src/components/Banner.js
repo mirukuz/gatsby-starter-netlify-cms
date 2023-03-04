@@ -9,8 +9,8 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const MaxWidthContainer = styled.div`
   display: grid;
   margin: 0 auto;
-  min-height: 960px;
-
+  min-height: 720px;
+  grid-template-rows: 8em 3em 1.2fr 1fr;
   grid-template-columns: minmax(24px, auto) minmax(auto, 1300px) minmax(
       24px,
       auto
@@ -20,9 +20,24 @@ const MaxWidthContainer = styled.div`
     ". . ."
     ". headings ."
     ". mainpitch .";
+
+    @media only screen and (max-width: 1280px) and (min-width: 960px) {
+      min-height: 960px;
+    grid-template-rows: 8em 4em 1.2fr 1fr;
+    grid-template-columns: minmax(24px, auto) minmax(auto, 850px) 450px minmax(
+        24px,
+        auto
+      );
+    grid-template-areas:
+      ". nav nav ."
+      ". . agent ."
+      ". headings agent ."
+      ". mainpitch agent .";
+  }
   
-  @media only screen and (min-width: 960px) {
-    grid-template-rows: 48px 0.8fr 1.5fr 1fr;
+  @media only screen and (min-width: 1280px) {
+    min-height: 960px;
+    grid-template-rows: 8em 1fr 2fr 2fr;
     grid-template-columns: minmax(24px, auto) minmax(auto, 850px) 450px minmax(
         24px,
         auto
@@ -50,6 +65,7 @@ const HeadingsContainer = styled.div`
 const MainpitchContainer = styled.div`
   grid-area: mainpitch;
   z-index: 1;
+  margin-top: 24px;
 `;
 
 const Title = styled.h1`
@@ -73,7 +89,6 @@ const LearnMore = styled(Link)`
   color: #365b6d;
   cursor: pointer;
   text-decoration: none;
-
   &:hover {
     color: #637f8d;
   }
@@ -89,7 +104,7 @@ const Agent = styled(GatsbyImage)`
 export default ({ img, title, subheading, agent, mainpitch }) => {
   return (
     <MaxWidthContainer>
-      <Navbar style={{ gridArea: "nav", zIndex: 1 }} />
+      <Navbar style={{ gridArea: "nav", zIndex: 10 }} />
       <FullWidthImage
         img={img}
         withCurve={true}
