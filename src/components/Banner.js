@@ -86,6 +86,8 @@ const MainpitchDescription = styled.h3`
 const LearnMore = styled(Link)`
   font-size: 1.6rem;
   line-height: 4rem;
+  margin-bottom: 2em;
+  display: block;
   color: #365b6d;
   cursor: pointer;
   text-decoration: none;
