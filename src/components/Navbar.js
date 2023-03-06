@@ -22,7 +22,7 @@ const Ul = styled.ul`
   height: 100vh;
   width: 80vw;
   transform: ${({isOpen}) =>  isOpen? `translateX(0)`  : `translateX(-80vw)`};
-  transition: transform 0.3s ease-in-out ;
+  transition: transform 0.3s ease-in-out;
   background-color: #060808;
   @media only screen and (min-width: 960px) {
     transform: none;
@@ -57,6 +57,10 @@ const StyledLink = styled(Link)`
   }
 `;
 
+// const LanguageSwitch = styled.div`
+
+// `;
+
 const Navbar = (props) => {
   const [isOpen, setOpen] = useState(false);
   return (
@@ -80,6 +84,10 @@ const Navbar = (props) => {
           <Li>
             <StyledLink to="/#contact">Contact</StyledLink>
           </Li>
+          {/* <LanguageSwitch>
+            <div>EN</div>
+            <div>中文</div>
+          </LanguageSwitch> */}
         </Ul>
       </Container>
     </nav>

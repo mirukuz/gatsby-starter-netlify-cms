@@ -128,9 +128,8 @@ export default ({ img, title, subheading, agent, mainpitch }) => {
       )}
       <Agent
         image={agent}
-        // This is a presentational image, so the alt should be an empty string
         alt="agent photo"
-        formats={["auto", "webp", "avif"]}
+        formats={["auto", "webp", "avif", "png"]}
       />
       <MainpitchContainer>
         <MainpitchTitle>{mainpitch.title}</MainpitchTitle>

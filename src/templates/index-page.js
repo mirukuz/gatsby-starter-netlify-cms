@@ -88,7 +88,7 @@ export const pageQuery = graphql`
         }
         agent {
           childImageSharp {
-            gatsbyImageData(width: 360, quality: 100, layout: CONSTRAINED)
+            gatsbyImageData(width: 360, quality: 100, layout: CONSTRAINED, placeholder: NONE)
           }
         }
         heading

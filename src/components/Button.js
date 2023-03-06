@@ -9,6 +9,7 @@ const PrimaryButton = styled.button`
 
     &:hover {
         cursor: pointer;
+        background: linear-gradient(90deg, #F2A93C 0%, #FFEACB 100%);
     }
 `;
 
