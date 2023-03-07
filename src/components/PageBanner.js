@@ -18,14 +18,14 @@ const MaxWidthContainer = styled.div`
 const Title = styled.h1`
   grid-area: title;
   color: white;
-  z-index: 1;
   text-align: center;
   align-self: center;
+  z-index:1;
 `;
 export default ({ img, title }) => {
   return (
       <MaxWidthContainer>
-        <Navbar style={{ gridArea: "nav", zIndex: 1 }} />
+        <Navbar style={{ gridArea: "nav", zIndex: 10 }} />
         {title && <Title>{title}</Title>}
         <FullWidthImage img={img} height={title ? 360 : 130} style={{ gridArea: "1/1/3/4" }}/>
       </MaxWidthContainer>

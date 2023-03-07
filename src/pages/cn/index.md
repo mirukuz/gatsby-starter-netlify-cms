@@ -1,12 +1,10 @@
 ---
 templateKey: index-page
-title: We made property investment easy
+title: 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
 image: /img/sydney-gradiant.png
 agent: /img/agent.png
-heading: Property investment made easy
-subheading: We understand that buying a property can be a daunting task, so we
-  take care of all the due diligence and hard work for you. Our goal is to
-  ensure that you can sit back and relax while we do the heavy lifting.
+heading: 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+subheading: 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
 mainpitch:
   title: Why choose us
   description: >
@@ -16,7 +14,7 @@ mainpitch:
     experience.
 testimonials:
   - rating: 1
-    author_name: Luke Archibald
+    author_name: 王女士
     profile_photo_url: https://lh3.googleusercontent.com/a-/AOh14GhGGmTmvtD34HiRgwHdXVJUTzVbxpsk5_JnNKM5MA=s128-c0x00000000-cc-rp-mo
     relative_time_description: a week ago
     text: Called regarding paid advertising google pages to the top of its site of a
@@ -52,7 +50,7 @@ socialmedia:
   - name: LINE
     qr: /img/line.png
     link: https://line.me/ti/p/q9ncbIefyL
-  - name: RED
+  - name: 小红书
     qr: /img/xhs.png
     link: http://xhslink.com/NeMBEn
   - name: Wechat
