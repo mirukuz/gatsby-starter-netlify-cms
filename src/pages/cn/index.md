@@ -1,17 +1,17 @@
 ---
 templateKey: index-page
-title: 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
 image: /img/sydney-gradiant.png
 agent: /img/agent.png
-heading: 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
-subheading: 喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵喵
+heading: 澳洲房產一站式服務
+subheading: 利用25-40個可靠數據幫客戶從全澳15000+suburbs鎖定同事具備正現金流、高增值區及軟裝潛力房產進行投資。
 mainpitch:
-  title: Why choose us
+  title: Benny Wang
   description: >
-    We are excited to offer you our comprehensive one-stop buying service,
-    designed to help you purchase properties across Australia and generate
-    passive income. Our team is committed to providing you with a stress-free
-    experience.
+    全澳房產賣家投資顧問、持牌賣家代理。
+    多年跨州投資買房經驗。
+    利用3年時間擁有4間正現金流、高增值房產投資組合。
+    致力於成為您投資房產最有利的後盾。
+    從選區、挑房、驗房、議價到交割一站式服務。
 testimonials:
   - rating: 1
     author_name: 王女士

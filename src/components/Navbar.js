@@ -104,10 +104,10 @@ const Navbar = (props) => {
           </Ul>
           <LanguageSwitch>
             <Li>
-              <StyledLink to="/#contact">EN</StyledLink>
+              <StyledLink to="/">EN</StyledLink>
             </Li>
             <Li>
-              <StyledLink to="/#contact">中文</StyledLink>
+              <StyledLink to="/cn">中文</StyledLink>
             </Li>
           </LanguageSwitch>
         </Overlay>

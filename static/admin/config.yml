@@ -55,7 +55,6 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Agent, name: agent, widget: image }
           - { label: Heading, name: heading, widget: string }
@@ -107,3 +106,67 @@ collections:
           - { label: Banner, name: banner, widget: image }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+  - name: "cn"
+    label: "中文頁面"
+    files:
+      - file: "src/pages/cn/index.md"
+        label: "首頁"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: 背景圖, name: image, widget: image }
+          - { label: BA照片, name: agent, widget: image }
+          - { label: 標題, name: heading, widget: string }
+          - { label: 副標題, name: subheading, widget: string }
+          - {
+              label: 白色背景,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: 白色背景標題, name: title, widget: string },
+                  { label: 白色背景副標題, name: description, widget: text },
+                ],
+            }
+          - {
+              label: 好評,
+              name: testimonials,
+              widget: list,
+              fields:
+                [
+                  { label: 提交者, name: author_name, widget: string },
+                  { label: 內容, name: text, widget: string },
+                  { label: 提交者照片, name: profile_photo_url, widget: string },
+                  { rating: 評星, name: rating, widget: number },
+                  { label: 時間, name: relative_time_description, widget: string },
+                ],
+            }
+          - {
+              label: 社交媒體,
+              name: socialmedia,
+              widget: list,
+              fields:
+                [
+                  { label: 名字, name: name, widget: string },
+                  { label: 鏈接, name: link, widget: string },
+                  { label: QR, name: qr, widget: image },
+                ],
+            }
+      - file: "src/pages/cn/services/index.md"
+        label: "服務"
+        name: "services"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "services-page",
+            }
+          - { label: 背景圖, name: banner, widget: image }
+          - { label: "標題", name: "title", widget: "string" }
+          - { label: "內容", name: "body", widget: "markdown" }

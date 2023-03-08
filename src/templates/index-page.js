@@ -13,7 +13,7 @@ import Contact from "../components/Contact";
 export const IndexPageTemplate = ({
   image,
   agent,
-  title,
+  heading,
   subheading,
   mainpitch,
   testimonials,
@@ -25,7 +25,7 @@ export const IndexPageTemplate = ({
     <div>
       <Banner
         img={heroImage}
-        title={title}
+        heading={heading}
         agent={agentImage}
         subheading={subheading}
         mainpitch={mainpitch}
@@ -40,7 +40,6 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   agent: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
@@ -55,7 +54,6 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         agent={frontmatter.agent}
-        title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}

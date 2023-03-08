@@ -103,7 +103,7 @@ const Agent = styled(GatsbyImage)`
   }
 `;
 
-export default ({ img, title, subheading, agent, mainpitch }) => {
+export default ({ img, heading, subheading, agent, mainpitch }) => {
   return (
     <MaxWidthContainer>
       <Navbar style={{ gridArea: "nav", zIndex: 10 }} />
@@ -112,10 +112,10 @@ export default ({ img, title, subheading, agent, mainpitch }) => {
         withCurve={true}
         style={{ gridArea: "1/1/4/5" }}
       />
-      {(title || subheading) && (
+      {(heading || subheading) && (
         <HeadingsContainer>
           {/* Any content here will be centered in the component */}
-          {title && <Title>{title}</Title>}
+          {heading && <Title>{heading}</Title>}
           {subheading && <Subheading>{subheading}</Subheading>}
           <BookButton
             onClick={() => {

@@ -1,6 +1,5 @@
 ---
 templateKey: index-page
-title: We made property investment easy
 image: /img/sydney-gradiant.png
 agent: /img/agent.png
 heading: Property investment made easy
