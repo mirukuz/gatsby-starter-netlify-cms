@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import logo from "../img/logo.png";
 import Hamburger from "hamburger-react";
+import { useTranslation } from 'react-i18next';
 
 const Container = styled.nav`
   margin-top: 24px;
@@ -77,6 +78,7 @@ const LanguageSwitch = styled.ul`
 
 const Navbar = (props) => {
   const [isOpen, setOpen] = useState(false);
+  const { t, i18n } = useTranslation();
   return (
     <nav role="navigation" aria-label="main-navigation" {...props}>
       <Container>
@@ -93,7 +95,7 @@ const Navbar = (props) => {
         <Overlay isOpen={isOpen}>
           <Ul>
             <Li>
-              <StyledLink to="/services">Services</StyledLink>
+              <StyledLink to="/services">{t('Services')}</StyledLink>
             </Li>
             <Li>
               <StyledLink to="/blog">Client cases</StyledLink>
@@ -104,10 +106,10 @@ const Navbar = (props) => {
           </Ul>
           <LanguageSwitch>
             <Li>
-              <StyledLink to="/">EN</StyledLink>
+              <StyledLink to="/" onClick={() => i18n.changeLanguage('en')}>EN</StyledLink>
             </Li>
             <Li>
-              <StyledLink to="/cn">中文</StyledLink>
+              <StyledLink to="/cn" onClick={() => i18n.changeLanguage('cn')}>中文</StyledLink>
             </Li>
           </LanguageSwitch>
         </Overlay>
