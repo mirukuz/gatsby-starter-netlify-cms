@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from 'gatsby'
 import { SecondaryButton } from './Button';
 import BlogRoll from './BlogRoll';
+import { useTranslation } from 'react-i18next';
 
 const MaxWidthContainer = styled.div`
   display: grid;
@@ -28,15 +29,16 @@ const ReadMore = styled(Link)`
   margin-top: 24px;
 `;
 const BlogTmeplate = (props) => {
+  const { t } = useTranslation();
   return (
     <MaxWidthContainer>
       <Heading>
-        Latest deals from our clients
+        {t("lastest_deals_from_our_clients")}
       </Heading>
       <BlogRoll />
       <ReadMore to="/blog">
         <SecondaryButton>
-          Read more
+        {t("read_more")}
         </SecondaryButton>
       </ReadMore>
       <svg style={{ position: "absolute", bottom: 0 }} viewBox="0 0 1511 168" fill="none" xmlns="http://www.w3.org/2000/svg">

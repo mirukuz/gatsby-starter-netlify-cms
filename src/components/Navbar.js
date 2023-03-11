@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import logo from "../img/logo.png";
+import Logo from "./Logo";
 import Hamburger from "hamburger-react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 const Container = styled.nav`
-  margin-top: 24px;
+  grid-area: nav;
+  z-index: 10;
   display: grid;
-  grid-template-columns: 8em 1fr 48px;
+  grid-template-columns: 16em 1fr 48px;
   grid-template-areas: "logo . nav";
   @media only screen and (min-width: 960px) {
-    grid-template-columns: 8em 1fr auto;
+    grid-template-columns: 16em 1fr auto;
     grid-template-areas: "logo nav";
   }
 `;
@@ -33,7 +34,7 @@ const Overlay = styled.div`
     transition: none;
     position: initial;
     width: 100%;
-    height: auto;
+    height: 5em;
     background-color: transparent;
     display: flex;
   }
@@ -57,10 +58,11 @@ const MenuIcon = styled.div`
 const Li = styled.li`
   display: flex;
   padding: 36px 24px;
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`
-  color: white;
+  color: #f2f1eb;
   text-decoration: none;
   font-size: 1.5rem;
   @media only screen and (max-width: 960px) {
@@ -80,41 +82,37 @@ const Navbar = (props) => {
   const [isOpen, setOpen] = useState(false);
   const { t, i18n } = useTranslation();
   return (
-    <nav role="navigation" aria-label="main-navigation" {...props}>
-      <Container>
-        <MenuIcon>
-          <Hamburger color="white" toggled={isOpen} toggle={setOpen} />
-        </MenuIcon>
-        <Link to="/" className="navbar-item" title="Logo">
-          <img
-            src={logo}
-            alt="Benny AU Properties"
-            style={{ width: "6em", height: "6em" }}
-          />
-        </Link>
-        <Overlay isOpen={isOpen}>
-          <Ul>
-            <Li>
-              <StyledLink to="/services">{t('Services')}</StyledLink>
-            </Li>
-            <Li>
-              <StyledLink to="/blog">Client cases</StyledLink>
-            </Li>
-            <Li>
-              <StyledLink to="/#contact">Contact</StyledLink>
-            </Li>
-          </Ul>
-          <LanguageSwitch>
-            <Li>
-              <StyledLink to="/" onClick={() => i18n.changeLanguage('en')}>EN</StyledLink>
-            </Li>
-            <Li>
-              <StyledLink to="/cn" onClick={() => i18n.changeLanguage('cn')}>中文</StyledLink>
-            </Li>
-          </LanguageSwitch>
-        </Overlay>
-      </Container>
-    </nav>
+    <Container role="navigation" aria-label="main-navigation">
+      <MenuIcon>
+        <Hamburger color="white" toggled={isOpen} toggle={setOpen} />
+      </MenuIcon>
+      <Logo />
+      <Overlay isOpen={isOpen}>
+        <Ul>
+          <Li>
+            <StyledLink to="/services">{t("services")}</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/blog">{t("client_cases")}</StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/#contact">{t("contact")}</StyledLink>
+          </Li>
+        </Ul>
+        <LanguageSwitch>
+          <Li>
+            <StyledLink to="/" onClick={() => i18n.changeLanguage("en")}>
+              EN
+            </StyledLink>
+          </Li>
+          <Li>
+            <StyledLink to="/cn" onClick={() => i18n.changeLanguage("cn")}>
+              中文
+            </StyledLink>
+          </Li>
+        </LanguageSwitch>
+      </Overlay>
+    </Container>
   );
 };
 

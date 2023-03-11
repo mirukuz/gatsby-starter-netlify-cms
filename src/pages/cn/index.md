@@ -7,10 +7,7 @@ subheading: 利用25-40個可靠數據幫客戶從全澳15000+suburbs鎖定同�
 mainpitch:
   title: Benny Wang
   description: >
-    全澳房產賣家投資顧問、持牌賣家代理。
-    多年跨州投資買房經驗。
-    利用3年時間擁有4間正現金流、高增值房產投資組合。
-    致力於成為您投資房產最有利的後盾。
+    全澳房產賣家投資顧問、持牌賣家代理。 多年跨州投資買房經驗。 利用3年時間擁有4間正現金流、高增值房產投資組合。 致力於成為您投資房產最有利的後盾。
     從選區、挑房、驗房、議價到交割一站式服務。
 testimonials:
   - rating: 1
@@ -50,10 +47,10 @@ socialmedia:
   - name: LINE
     qr: /img/line.png
     link: https://line.me/ti/p/q9ncbIefyL
-  - name: 小红书
+  - name: 小紅書
     qr: /img/xhs.png
     link: http://xhslink.com/NeMBEn
-  - name: Wechat
+  - name: 微信
     qr: /img/wechat.png
     link: https://u.wechat.com/kKaE-ZQSsjmyrNF8eFxcENo
 ---

@@ -1,7 +1,6 @@
 ---
 templateKey: services-page
 path: /services
-banner: /img/sydney-gradiant.png
 title: Services introduction
 ---
 We are delighted to offer you our one-stop full buyer agent service. Our goal is to help you find the perfect property that meets your needs and suits your budget.
@@ -20,6 +19,6 @@ We understand that property hunting can be stressful, so we take care of all the
 
 **Stage 5:** If your offer is accepted, we will exchange the contract for sale, and you can start preparing for settlement. Meanwhile, we will organize a Building and Pest inspection.
 
-Final stage: Once settlement is complete, we will hand over the keys, and you can start enjoying the passive income and grow your wealth.
+**Final stage:** Once settlement is complete, we will hand over the keys, and you can start enjoying the passive income and grow your wealth.
 
 We take pride in providing you with a hassle-free experience. Our team consists of all the members you need to make the process smooth and efficient. We are always here to assist you, and we look forward to being a part of your property journey.

@@ -41,7 +41,7 @@ export const ServicesPageTemplate = ({ title, content, contentComponent }) => {
       <PageBanner title={title} />
       <MaxWidthContainer>
         <PageContent style={{ gridArea: "content" }} content={content} />
-        <LearnMore style={{ gridArea: "book" }} to="/#contact">Book a call today &#8250;</LearnMore>
+        {/* <LearnMore style={{ gridArea: "book" }} to="/#contact">Book a call today &#8250;</LearnMore> */}
       </MaxWidthContainer>
     </>
   );

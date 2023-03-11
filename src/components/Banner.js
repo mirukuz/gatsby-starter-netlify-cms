@@ -5,44 +5,48 @@ import Button from "./Button";
 import styled from "styled-components";
 import { Link, navigate } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { useTranslation } from "react-i18next";
 
 const MaxWidthContainer = styled.div`
   display: grid;
   margin: 0 auto;
   min-height: 720px;
-  grid-template-rows: 8em 3em 1.2fr 1fr;
+  grid-template-rows: 24px 8em 3em 1.2fr 1fr;
   grid-template-columns: minmax(24px, auto) minmax(auto, 1300px) minmax(
       24px,
       auto
     );
   grid-template-areas:
+    ". . ."
     ". nav ."
     ". . ."
     ". headings ."
     ". mainpitch .";
 
-    @media only screen and (max-width: 1280px) and (min-width: 960px) {
-      min-height: 960px;
-    grid-template-rows: 8em 4em 1.2fr 1fr;
+  @media only screen and (max-width: 1280px) and (min-width: 960px) {
+    min-height: 960px;
+    grid-template-rows: 24px 8em 4em 1.2fr 1fr;
     grid-template-columns: minmax(24px, auto) minmax(auto, 850px) 450px minmax(
         24px,
         auto
       );
     grid-template-areas:
+      " . . . ."
       ". nav nav ."
       ". . agent ."
       ". headings agent ."
       ". mainpitch agent .";
   }
-  
+
   @media only screen and (min-width: 1280px) {
     min-height: 960px;
-    grid-template-rows: 8em 1fr 2fr 2fr;
+    grid-template-rows: 24px 8em 1fr 2fr 2fr;
     grid-template-columns: minmax(24px, auto) minmax(auto, 850px) 450px minmax(
         24px,
         auto
       );
     grid-template-areas:
+      " . . . ."
       ". nav nav ."
       ". . agent ."
       ". headings agent ."
@@ -69,11 +73,11 @@ const MainpitchContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  color: white;
+  color: #f2f1eb;
 `;
 
 const Subheading = styled.h3`
-  color: white;
+  color: #f2f1eb;
   margin-top: 0.25em;
 `;
 
@@ -104,13 +108,14 @@ const Agent = styled(GatsbyImage)`
 `;
 
 export default ({ img, heading, subheading, agent, mainpitch }) => {
+  const { t } = useTranslation();
   return (
     <MaxWidthContainer>
-      <Navbar style={{ gridArea: "nav", zIndex: 10 }} />
+      <Navbar />
       <FullWidthImage
         img={img}
         withCurve={true}
-        style={{ gridArea: "1/1/4/5" }}
+        style={{ gridArea: "1/1/5/6" }}
       />
       {(heading || subheading) && (
         <HeadingsContainer>
@@ -122,7 +127,7 @@ export default ({ img, heading, subheading, agent, mainpitch }) => {
               navigate("/#contact");
             }}
           >
-            Book a call today
+            {t("book_a_call")}
           </BookButton>
         </HeadingsContainer>
       )}
@@ -134,7 +139,7 @@ export default ({ img, heading, subheading, agent, mainpitch }) => {
       <MainpitchContainer>
         <MainpitchTitle>{mainpitch.title}</MainpitchTitle>
         <MainpitchDescription>{mainpitch.description}</MainpitchDescription>
-        <LearnMore to="/services">Learn more &#8250;</LearnMore>
+        <LearnMore to="/services">{t("learn_more")} &#8250;</LearnMore>
       </MainpitchContainer>
     </MaxWidthContainer>
   );

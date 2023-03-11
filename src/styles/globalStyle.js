@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
     @media only screen and (min-width: 960px) {
       font-size: 3rem;
-    line-height: 4rem;
+      line-height: 4rem;
     }
   }
 

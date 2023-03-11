@@ -17,7 +17,7 @@ const MaxWidthContainer = styled.div`
 
 const Title = styled.h1`
   grid-area: title;
-  color: white;
+  color: #f2f1eb;
   text-align: center;
   align-self: center;
   z-index:1;

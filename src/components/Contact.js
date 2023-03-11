@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SecondaryButton } from "./Button";
 import { Link } from "gatsby";
 import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { useTranslation } from 'react-i18next';
 
 const MaxWidthContainer = styled.div`
   display: grid;
@@ -99,6 +100,7 @@ const TextArea = styled.textarea`
 `;
 
 const Contact = ({ socialmedia }) => {
+  const { t } = useTranslation();
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const beforeSubmit = (event) => {
@@ -112,12 +114,12 @@ const Contact = ({ socialmedia }) => {
   };
   return (
     <MaxWidthContainer id="contact">
-      <Heading>Free Consultation</Heading>
+      <Heading>{t("free_consultation")}</Heading>
       <Description>
-        Feel free to contact us at <br />
+      {t("feel_free")} <br />
         info@bennyauproperties.com.au <br />
         <br />
-        Or via these social media accounts
+        {t("or_via")}
       </Description>
       <SocialMedia>
         {socialmedia &&
@@ -130,7 +132,7 @@ const Contact = ({ socialmedia }) => {
       </SocialMedia>
       <Form onSubmit={beforeSubmit}>
         <FormElement style={{ gridArea: "name" }}>
-          <Label htmlFor="subject">Name</Label>
+          <Label htmlFor="subject">{t("name")}</Label>
           <Input
             onChange={(e) => setName(e.target.value)}
             value={name}
@@ -138,7 +140,7 @@ const Contact = ({ socialmedia }) => {
           />
         </FormElement>
         <FormElement style={{ gridArea: "enquiry" }}>
-          <Label htmlFor="body">Enquiry</Label>
+          <Label htmlFor="body">{t("enquiry")}</Label>
           <TextArea
             onChange={(e) => setMessage(e.target.value)}
             value={message}
@@ -149,7 +151,7 @@ const Contact = ({ socialmedia }) => {
           type="submit"
           style={{ gridArea: "button", marginTop: 16 }}
         >
-          Send
+          {t("send")}
         </SecondaryButton>
       </Form>
     </MaxWidthContainer>

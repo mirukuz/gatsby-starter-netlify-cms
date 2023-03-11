@@ -16,7 +16,7 @@ const PrimaryButton = styled.button`
 const SecButton = styled.button`
     padding: 12px 24px;
     background: linear-gradient(90deg, #5C6263 0%, #0A0D16 100%);
-    color: white;
+    color: #f2f1eb;
     border: none;
 
     &:hover {

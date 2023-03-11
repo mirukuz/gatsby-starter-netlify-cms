@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Carousel from "./Carousel";
 import { CarouselItem } from "./CarouselItem";
+import { useTranslation } from 'react-i18next';
 
 const MaxWidthContainer = styled.div`
   display: grid;
@@ -26,9 +27,10 @@ const Heading = styled.h1`
 
 
 const Reviews = ({ testimonials }) => {
+  const { t } = useTranslation();
   return (
     <MaxWidthContainer>
-      <Heading>Reviews</Heading>
+      <Heading>{t("reviews")}</Heading>
       <Carousel>
         {testimonials && testimonials.map(
           ({author_name, relative_time_description, profile_photo_url, rating, text}) =>
