@@ -34,11 +34,11 @@ const LearnMore = styled(Link)`
   }
 `;
 
-export const ServicesPageTemplate = ({ title, content, contentComponent }) => {
+export const ServicesPageTemplate = ({ location, title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
   return (
     <>
-      <PageBanner title={title} />
+      <PageBanner location={location} title={title} />
       <MaxWidthContainer>
         <PageContent style={{ gridArea: "content" }} content={content} />
         {/* <LearnMore style={{ gridArea: "book" }} to="/#contact">Book a call today &#8250;</LearnMore> */}
@@ -48,18 +48,20 @@ export const ServicesPageTemplate = ({ title, content, contentComponent }) => {
 };
 
 ServicesPageTemplate.propTypes = {
+  location: PropTypes.object,
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   banner: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
-const ServicesPage = ({ data }) => {
+const ServicesPage = ({ location, data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
       <ServicesPageTemplate
+        location={location}
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
@@ -71,6 +73,7 @@ const ServicesPage = ({ data }) => {
 
 ServicesPage.propTypes = {
   data: PropTypes.object.isRequired,
+  location: PropTypes.object
 };
 
 export default ServicesPage;

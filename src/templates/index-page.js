@@ -17,7 +17,8 @@ export const IndexPageTemplate = ({
   subheading,
   mainpitch,
   testimonials,
-  socialmedia
+  socialmedia,
+  location
 }) => {
   const heroImage = getImage(image) || image;
   const agentImage = getImage(agent) || agent
@@ -29,6 +30,7 @@ export const IndexPageTemplate = ({
         agent={agentImage}
         subheading={subheading}
         mainpitch={mainpitch}
+        location={location}
       />
       <Blog />
       <Reviews testimonials={testimonials}/>
@@ -44,14 +46,16 @@ IndexPageTemplate.propTypes = {
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   testimonials: PropTypes.array,
+  location: PropTypes.object
 };
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ location, data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
       <IndexPageTemplate
+        location={location}
         image={frontmatter.image}
         agent={frontmatter.agent}
         heading={frontmatter.heading}
@@ -65,6 +69,7 @@ const IndexPage = ({ data }) => {
 };
 
 IndexPage.propTypes = {
+  location: PropTypes.object,
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,

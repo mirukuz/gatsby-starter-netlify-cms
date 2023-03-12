@@ -107,11 +107,11 @@ const Agent = styled(GatsbyImage)`
   }
 `;
 
-export default ({ img, heading, subheading, agent, mainpitch }) => {
+export default ({ location, img, heading, subheading, agent, mainpitch }) => {
   const { t } = useTranslation();
   return (
     <MaxWidthContainer>
-      <Navbar />
+      <Navbar location={location} />
       <FullWidthImage
         img={img}
         withCurve={true}

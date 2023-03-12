@@ -36,8 +36,8 @@ const LogoImg = styled.img`
   grid-area: img;
 `;
 
-export default () => (
-  <Logo to="/" className="navbar-item" title="Logo">
+export default ({to}) => (
+  <Logo to={to} className="navbar-item" title="Logo">
     <LogoImg
       src={logo}
       alt="Benny AU Properties"

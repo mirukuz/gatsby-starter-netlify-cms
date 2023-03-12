@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import styled from "styled-components";
 import Logo from "./Logo";
 import Hamburger from "hamburger-react";
@@ -77,26 +77,42 @@ const LanguageSwitch = styled.ul`
     flex-direction: row;
   }
 `;
-
-const Navbar = (props) => {
+const pathDict = {
+  cn: {
+    "home": "/cn",
+    "services": "/cn/services",
+    "blog": "/cn/blog",
+    "contact": "/cn/#contact"
+  },
+  en: {
+    "home": "/",
+    "services": "/services",
+    "blog": "/blog",
+    "contact": "/#contact"
+  }
+}
+const Navbar = ({location}) => {
   const [isOpen, setOpen] = useState(false);
+  console.log("location!!", location)
+  const isCN = location.pathname.includes(withPrefix("/cn"))
   const { t, i18n } = useTranslation();
+  const path = isCN? pathDict.cn : pathDict.en;
   return (
     <Container role="navigation" aria-label="main-navigation">
       <MenuIcon>
         <Hamburger color="white" toggled={isOpen} toggle={setOpen} />
       </MenuIcon>
-      <Logo />
+      <Logo to={path.home}/>
       <Overlay isOpen={isOpen}>
         <Ul>
           <Li>
-            <StyledLink to="/services">{t("services")}</StyledLink>
+            <StyledLink to={path.services}>{t("services")}</StyledLink>
           </Li>
           <Li>
-            <StyledLink to="/blog">{t("client_cases")}</StyledLink>
+            <StyledLink to={path.blog}>{t("client_cases")}</StyledLink>
           </Li>
           <Li>
-            <StyledLink to="/#contact">{t("contact")}</StyledLink>
+            <StyledLink to={path.contact}>{t("contact")}</StyledLink>
           </Li>
         </Ul>
         <LanguageSwitch>

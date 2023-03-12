@@ -28,12 +28,13 @@ export const BlogPostTemplate = ({
   description,
   title,
   helmet,
+  location,
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
     <>
-      <PageBanner />
+      <PageBanner location={location} />
       {helmet || ""}
       <MaxWidthContainer>
         <div style={{ gridArea: "content" }}>
@@ -52,14 +53,16 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  location: PropTypes.object,
 };
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ location, data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
       <BlogPostTemplate
+        location={location}
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -80,6 +83,7 @@ const BlogPost = ({ data }) => {
 };
 
 BlogPost.propTypes = {
+  location: PropTypes.object,
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
