@@ -43,8 +43,10 @@ const Overlay = styled.div`
 const Ul = styled.ul`
   display: flex;
   flex-direction: column;
+  height: 100%;
   @media only screen and (min-width: 960px) {
     flex-direction: row;
+    width: 100%;
   }
 `;
 
@@ -57,52 +59,71 @@ const MenuIcon = styled.div`
 
 const Li = styled.li`
   display: flex;
-  padding: 36px 24px;
+  padding: 24px;
   align-items: center;
+`;
+
+const Split = styled.div`
+  color: #f2f1eb;
+  margin: 0 12px;
+  font-size: 1.2rem;
 `;
 
 const StyledLink = styled(Link)`
   color: #f2f1eb;
   text-decoration: none;
   font-size: 1.5rem;
-  @media only screen and (max-width: 960px) {
-    font-size: 1.5rem;
+  @media only screen and (min-width: 960px) {
+    line-height: 2.5rem;
+    &::after {
+      content: "";
+      display: block;
+      width: ${({ active }) => (active === true ? "100%" : 0)};
+      height: 2px;
+      background: #fec13e;
+      transition: width 0.3s;
+    }
+    &:hover::after {
+      width: 100%;
+    }
   }
 `;
 
-const LanguageSwitch = styled.ul`
+const LanguageSwitch = styled.li`
   display: flex;
-  flex-direction: column;
+  padding: 24px;
+  align-items: center;
+  flex-direction: row;
+  margin-top: auto;
   @media only screen and (min-width: 960px) {
-    flex-direction: row;
+    margin-left: auto;
   }
 `;
 const pathDict = {
   cn: {
-    "home": "/cn",
-    "services": "/cn/services",
-    "blog": "/cn/blog",
-    "contact": "/cn/#contact"
+    home: "/cn",
+    services: "/cn/services",
+    blog: "/blog",
+    contact: "/cn/#contact",
   },
   en: {
-    "home": "/",
-    "services": "/services",
-    "blog": "/blog",
-    "contact": "/#contact"
-  }
-}
-const Navbar = ({location}) => {
+    home: "/",
+    services: "/services",
+    blog: "/blog",
+    contact: "/#contact",
+  },
+};
+const Navbar = ({ location }) => {
   const [isOpen, setOpen] = useState(false);
-  console.log("location!!", location)
-  const isCN = location.pathname.includes(withPrefix("/cn"))
+  const isCN = location.pathname.includes(withPrefix("/cn"));
   const { t, i18n } = useTranslation();
-  const path = isCN? pathDict.cn : pathDict.en;
+  const path = isCN ? pathDict.cn : pathDict.en;
   return (
     <Container role="navigation" aria-label="main-navigation">
       <MenuIcon>
         <Hamburger color="white" toggled={isOpen} toggle={setOpen} />
       </MenuIcon>
-      <Logo to={path.home}/>
+      <Logo to={path.home} />
       <Overlay isOpen={isOpen}>
         <Ul>
           <Li>
@@ -114,19 +135,33 @@ const Navbar = ({location}) => {
           <Li>
             <StyledLink to={path.contact}>{t("contact")}</StyledLink>
           </Li>
-        </Ul>
-        <LanguageSwitch>
-          <Li>
-            <StyledLink to="/" onClick={() => i18n.changeLanguage("en")}>
+
+          <LanguageSwitch>
+            <StyledLink
+              active={!isCN}
+              to={
+                isCN
+                  ? location.pathname.replace("/cn/", "/")
+                  : location.pathname
+              }
+              onClick={() => i18n.changeLanguage("en")}
+            >
               EN
             </StyledLink>
-          </Li>
-          <Li>
-            <StyledLink to="/cn" onClick={() => i18n.changeLanguage("cn")}>
+            <Split>/</Split>
+            <StyledLink
+              active={isCN}
+              to={
+                isCN
+                  ? location.pathname
+                  : location.pathname.replace("/", "/cn/")
+              }
+              onClick={() => i18n.changeLanguage("cn")}
+            >
               中文
             </StyledLink>
-          </Li>
-        </LanguageSwitch>
+          </LanguageSwitch>
+        </Ul>
       </Overlay>
     </Container>
   );

@@ -4,9 +4,9 @@ import Footer from "../components/Footer";
 import GlobalStyle from "../styles/globalStyle";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
+require("../locales/i18n")
 
 const TemplateWrapper = ({ children }) => {
-  require("../locales/i18n")
   const { title, description } = useSiteMetadata();
   return (
     <div>

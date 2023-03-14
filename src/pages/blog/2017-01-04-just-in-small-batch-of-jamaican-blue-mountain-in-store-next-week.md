@@ -14,11 +14,6 @@ purchasedprice: $431800
 bankdesktopvalue: $482000 (Jan/23)
 currentrent: $510
 keypoint: Closed the deal under market value, making money on the way in.
-tags:
-  - jamaica
-  - green beans
-  - flavor
-  - tasting
 ---
 ![](/img/screen-shot-2023-02-06-at-7.58.07-am.png)
 

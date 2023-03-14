@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
@@ -31,7 +30,6 @@ export const BlogPostTemplate = ({
   location,
 }) => {
   const PostContent = contentComponent || Content;
-
   return (
     <>
       <PageBanner location={location} />
@@ -40,7 +38,7 @@ export const BlogPostTemplate = ({
         <div style={{ gridArea: "content" }}>
           <h1>{title}</h1>
           <p>{description}</p>
-          <PostContent content={content} />
+          <PostContent location={location} content={content} />
         </div>
       </MaxWidthContainer>
     </>
@@ -75,7 +73,6 @@ const BlogPost = ({ location, data }) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -100,7 +97,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
       }
     }
   }

@@ -42,10 +42,13 @@ const Menu = styled.div`
 const StyledLink = styled(Link)`
   color: #f2f1eb;
   text-decoration: none;
-  margin: 16px 0;
-  &:not(:first-child), &:not(:last-child) {
-    margin: 8px 0;
+  &:first-child {
+    margin: 16px 0 8px 0;
   }
+  &:last-child {
+    margin: 8px 0 16px 0;
+  }
+  margin: 8px 0;
 `;
 
 const CopyRight = styled.div`

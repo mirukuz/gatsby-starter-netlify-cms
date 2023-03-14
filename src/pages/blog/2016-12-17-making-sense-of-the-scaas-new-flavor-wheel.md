@@ -14,9 +14,6 @@ bankdesktopvalue: $548000 (Jan 2023)
 currentrent: $470
 keypoint: 60 groups of buyer, 150 ppl attended open home.  Secured it at second
   highest offer
-tags:
-  - flavor
-  - tasting
 ---
 ![flavor wheel](/img/screen-shot-2023-02-06-at-7.47.33-am.png)
 

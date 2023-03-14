@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import Layout from "../../components/Layout";
-import BlogRoll from "../../components/BlogRoll";
-import PageBanner from "../../components/PageBanner";
+import Layout from "../../../components/Layout";
+import BlogRoll from "../../../components/BlogRoll";
+import PageBanner from "../../../components/PageBanner";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 

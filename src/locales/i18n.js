@@ -19,6 +19,15 @@ const resources = {
       send: "Send",
       feel_free: "Feel free to contact us at",
       or_via: "Or via these social media accounts",
+      location: "Location",
+      house_type: "House Type",
+      land_size: "Land Size",
+      year_of_build: "Year of Build",
+      purchased_date: "Purchased Date",
+      purchased_price: "Purchased Price",
+      bank_desktop_value: "Bank Desktop Value",
+      current_rent: "Current Rent",
+      key_point: "Key Point"
     },
   },
   cn: {
@@ -37,6 +46,15 @@ const resources = {
       send: "發送",
       feel_free: "您可以發送Email聯繫我們",
       or_via: "或者通過以下社交媒體",
+      location: "位於",
+      house_type: "房屋類型",
+      land_size: "土地面積",
+      year_of_build: "建於",
+      purchased_date: "購入日期",
+      purchased_price: "購入價格",
+      bank_desktop_value: "估價",
+      current_rent: "租金",
+      key_point: "要點"
     },
   },
 };

@@ -14,9 +14,6 @@ purchasedprice: $394000
 bankdesktopvalue: $430000 (July/22)
 currentrent: $520
 keypoint: Closed the deal before open home to avoid competition.
-tags:
-  - brewing
-  - chemex
 ---
 ![chemex](/img/screen-shot-2023-02-06-at-7.47.54-am.png)
 
